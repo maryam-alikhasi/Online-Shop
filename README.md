@@ -11,26 +11,26 @@ Developed as part of the **Web Programming** course at the **University of Isfah
 - **Frontend**: HTML, CSS, JavaScript  
 - **Features**
 
-This online shop project implements the following pages:
+    This online shop project implements the following pages:
 
-1. **Landing Layer**  
-   - Home Page  
+    1. **Landing Layer**  
+    - Home Page  
 
-2. **User Sign Up Layer**  
-   - User Registration Page  
-   - User Login Page  
+    2. **User Sign Up Layer**  
+    - User Registration Page  
+    - User Login Page  
 
-3. **User's Profile Layer**  
-   - Profile Page  
-   - Order History (with active/current orders)  
-   - Account Info Page  
+    3. **User's Profile Layer**  
+    - Profile Page  
+    - Order History (with active/current orders)  
+    - Account Info Page  
 
-4. **Products Layer**  
-   - Other Products Page  
-   - Selected Product Page  
+    4. **Products Layer**  
+    - Other Products Page  
+    - Selected Product Page  
 
-5. **Cart & Pay Layer**  
-   - Shopping Cart Page 
+    5. **Cart & Pay Layer**  
+    - Shopping Cart Page 
 
 - **Database**: SQLite (default Django DB, can be replaced with PostgreSQL/MySQL)  
 

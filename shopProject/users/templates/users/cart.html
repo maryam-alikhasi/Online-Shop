@@ -1,0 +1,241 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="fa">
+<head>
+    <meta charset="UTF-8">
+    <title>سبد خرید</title>
+    <link rel="stylesheet" href="{% static 'styles/cart.css' %}">
+</head>
+<body>
+
+
+<!--header-->
+<div class="header">
+    <div class="logo-container">
+        <img src="{% static 'images/cart/LOGO.png' %}" alt="logo" width="50px" height="50px">
+        <div class="logo-text">
+            <p style="margin: 0;line-height: 1;"><span style="color: #A72F3B">ک</span>استومی</p>
+            <div class="subtext">فروشگاه اینترنتی</div>
+        </div>
+    </div>
+    <div class="search-container">
+        <input type="text" placeholder="جستجو" class="search-box">
+        <button class="search-icon">
+            <img src="{% static 'images/cart/search-normal.svg' %}" width="24" height="24">
+        </button>
+    </div>
+    <div class="actions">
+        <a href="#" class="links-container">
+            <img src="{% static 'images/cart/Login.png' %}" alt="login">
+            <span>ورود | ثبت‌نام</span>
+        </a>
+        <a href="#" class="links-container">
+            <img src="{% static 'images/cart/shopping-cart.png' %}" alt="shopping">
+            <span>سبد خرید</span>
+            <span class="numbers">۰</span>
+        </a>
+    </div>
+</div>
+<div class="head-container">
+    <a href="#" class="paint">
+        <img src="{% static 'images/cart/magicpen.png' %}" style="margin-left: 4px">
+        <span>خودت طراحیش کن!</span>
+    </a>
+    <a href="#" class="items">پوشاک</a>
+    <a href="#" class="items">لوازم خانه</a>
+    <a href="#" class="items">قاب موبایل</a>
+    <a href="#" class="items">اکسسوری</a>
+    <a href="#" class="items">مدرسه و اداره</a>
+    <a href="#" class="items">کارت و پوستر</a>
+    <a href="#" class="items">جشن و مهمانی</a>
+</div>
+
+<div class="container">
+    <div class="center-container">
+        <img src="{% static 'images/cart/shopping-cart.svg' %}" alt="user">
+        <p>سبد خرید</p>
+    </div>
+    <div>
+        <img src="{% static 'images/cart/line.png' %}" alt="line">
+    </div>
+    <div class="center-container">
+        <img src="{% static 'images/cart/location.png' %}" alt="call">
+        <p style="color: #E5C1C4">اطلاعات تماس</p>
+    </div>
+    <div>
+        <img src="{% static 'images/cart/line.png' %}" alt="line">
+    </div>
+    <div class="center-container">
+        <img src="{% static 'images/cart/money-send.png' %}" alt="call">
+        <p style="color: #E5C1C4">پرداخت</p>
+    </div>
+</div>
+
+<!--pay-->
+<div class="container_body">
+    <div class="cart-section">
+        <p class="title1">سبد خرید</p>
+        <div class="cart-item">
+            <button class="remove-btn"><img src="{% static 'images/cart/close-square.svg' %}" width="24" height="24"></button>
+            <img src="{% static 'images/cart/Frame%2026087538.svg' %}" class="product">
+            <div class="details">
+                <p class="title">تیشرت سفید طرح دار</p>
+                <p class="title">۲۴۰.۰۰۰ تومان</p>
+            </div>
+            <div class="quantity">
+                <button class="plus">+</button>
+                <button class="number">۱</button>
+                <button class="minus">-</button>
+            </div>
+            <div class="shopping">
+                <img src="{% static 'images/cart/truck-fast.svg' %}">
+                <span>ارسال از ۳ روز آینده</span>
+            </div>
+        </div>
+        <div class="cart-item" style="border-top:none">
+            <button class="remove-btn"><img src="{% static 'images/cart/close-square.svg' %}" width="24" height="24"></button>
+            <img src="{% static 'images/cart/Frame%2026087538.svg' %}" class="product">
+            <div class="details">
+                <p class="title">تیشرت سفید طرح دار</p>
+                <p class="title">۲۴۰.۰۰۰ تومان</p>
+            </div>
+            <div class="quantity">
+                <button class="plus">+</button>
+                <button class="number">۱</button>
+                <button class="minus">-</button>
+            </div>
+            <div class="shopping">
+                <img src="{% static 'images/cart/truck-fast.svg' %}">
+                <span>ارسال از ۳ روز آینده</span>
+            </div>
+        </div>
+    </div>
+    <div class="left_side">
+        <div class="sidebar">
+            <p style="color: #242424;font-size: 14px">کد تخفیف</p>
+            <p style="color: #434343; font-size: 10px;margin: 0">کد تخفیف کد معرف کارت هدیه خود را در زیر وارد کرده و دکمه ثبت رو بزنید تا در صورت داشتن اعتبار به سفارش شما اعمال شود</p>
+            <div class = "code_box">
+                <input type="text" class="sidebar_input">
+                <input type="submit" value="ثبت" class="sidebar_send">
+            </div>
+
+            <div class="price-summary">
+                <div class="row">
+                    <div>
+                        <p>قیمت کالا ها</p>
+                        <p style="font-size: 10px">تعداد کالا</p>
+                    </div>
+                    <p>۲۴۰.۰۰۰ تومان</p>
+                </div>
+                <div class="row">
+                    <span class="text-icon">
+                       <img src="{% static 'images/cart/receipt-disscount.svg' %}">
+                        <p>مجموع تخفیف روی کالا ها</p>
+                    </span>
+                    <p><span style="color: #ED2E2E">۲۰.۰۰۰ </span>تومان</p>
+                </div>
+                <div class="row">
+                    <p>سود شما از خرید</p>
+                    <p>۳۰.۰۰۰ تومان</p>
+                </div>
+                <div class="row">
+                    <p style="padding-bottom: 7.5px">هزینه ارسال</p>
+                    <p>۵۰.۰۰۰ تومان</p>
+                </div>
+                <div class="row">
+                    <p>جمع مبلغ قابل پرداخت</p>
+                    <p>۲۹۰.۰۰۰ تومان</p>
+                </div>
+            </div>
+            <button class="checkout">ثبت سفارش<img src="{% static 'images/cart/Vector.svg' %}"></button>
+        </div>
+        <div class="notes">
+            <img src="{% static 'images/cart/info-circle.svg' %}" width="24" height="24" class="icon-notes">
+            <div class="text-notes">
+                <img src="{% static 'images/cart/Ellipse%2031.svg' %}" style="margin: 0">
+                <p>ارسال رایگان برای سفارش‌های بالای ۷۰۰,۰۰۰ تومان</p>
+            </div>
+            <div class="text-notes">
+                <img src="{% static 'images/cart/Ellipse%2031.svg' %}" style="margin: 0">
+                <p>در صورت اتمام موجودی، کالاها از سبد خرید حذف می‌شوند.</p>
+            </div>
+            <div class="text-notes">
+                <img src="{% static 'images/cart/Ellipse%2031.svg' %}" style="margin: 0">
+                <p>لطفا در مراحل خرید، فیلترشکن خود را خاموش کنید.</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!--footer-->
+<div class="footer1">
+    <div class="container-footer1">
+        <p>برای دریافت آخرین اخبار و تخفیف های جدید، ایمیل خود را وارد نمایید</p>
+        <form class="email-form">
+            <input type="email" class="email" placeholder="ایمیل شما">
+            <button type="submit" class="submit-btn-email">ثبت</button>
+        </form>
+    </div>
+    <div class="social">
+        <p>ما را در شبکه های اجتماعی دنبال کنید</p>
+        <div class="social-img">
+            <a href="#">
+                <img src="{% static 'images/cart/YouTube%20svg.png' %}" style="margin: 20px">
+            </a>
+            <a href="#">
+                <img src="{% static 'images/cart/Pinterest%20svg.png' %}" style="margin: 10px">
+            </a>
+            <a href="#">
+                <img src="{% static 'images/cart/174-1744532_facebook-icon-link-facebook-white-icon-hd-png-fotor-bg-remover-2023041811029%201.png' %}" style="margin: 10px">
+            </a>
+            <a href="#">
+                <img src="{% static 'images/cart/Instagram%20svg.png' %}" style="margin: 10px">
+            </a>
+        </div>
+    </div>
+</div>
+
+<div class="footer2">
+    <div class="links-buttom">
+        <div class="container-footer2">
+            <h3>همراه با کاستومی</h3>
+            <a href="#"> فروش محصولات</a>
+            <a href="#">فرصت همکاری </a>
+            <a href="#"> تماس با ما</a>
+            <a href="#">نقشه سایت </a>
+        </div>
+        <div class="container-footer2">
+            <h3>خدمات مشتریان</h3>
+            <a href="#">سوالات متداول</a>
+            <a href="#">حریم خصوصی</a>
+            <a href="#">ثبت شکایت</a>
+            <a href="#">ضمانت نامه محصولات</a>
+        </div>
+        <div class="container-footer2">
+            <h3>راهنمای خرید</h3>
+            <a href="#">راهنمای ثبت سفارش</a>
+            <a href="#">شیوه های پرداخت</a>
+            <a href="#">نحوه ارسال سفارش ها</a>
+            <a href="#">شرایط بازگرداندن محصول</a>
+        </div>
+    </div>
+
+    <div class="footer2-info">
+        <p style="font-size: 18px;font-weight: bold">فروشگاه اینترنتی کاستومی</p>
+        <div class="call">
+            <span>تماس با پشتیبانی:</span>
+            <span>۰۲۱-۳۴۵۶۰۰۰</span>
+            <span>پاسخگویی ۲۴ ساعته، ۷ روز هفته</span>
+        </div>
+        <div class="certificate">
+                <img src="{% static 'images/cart/01.png' %}"  width="54" height="64">
+                <img src="{% static 'images/cart/02.png' %}"  width="54" height="64">
+                <img src="{% static 'images/cart/03%201.png' %}"  width="54" height="64">
+        </div>
+    </div>
+    <div class="last-text">
+        <p>تمامی حقوق این وبسایت متعلق به فروشگاه اینترنتی کاستومی می‌باشد.</p>
+    </div>
+</div>
+</body>
+</html>

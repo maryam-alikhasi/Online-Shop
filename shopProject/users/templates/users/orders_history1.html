@@ -1,0 +1,701 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="fa">
+<head>
+    <meta charset="UTF-8">
+    <title>تاریخچه سفارشات</title>
+    <link rel="stylesheet" href="{% static 'styles/orders_history1.css' %}">
+    <script src="{% static 'orders_history.js' %}" defer></script>
+</head>
+<body>
+
+<!--header-->
+<div class="header">
+    <div class="logo-container">
+        <img src="{% static 'images/orders_history/LOGO.png' %}" alt="logo" width="50px" height="50px">
+        <div class="logo-text">
+            <p style="margin: 0;line-height: 1;"><span style="color: #A72F3B">ک</span>استومی</p>
+            <div class="subtext">فروشگاه اینترنتی</div>
+        </div>
+    </div>
+    <div class="search-container">
+        <input type="text" placeholder="جستجو" class="search-box">
+        <button class="search-icon">
+            <img src="{% static 'images/orders_history/search-normal.svg' %}" width="24" height="24">
+        </button>
+    </div>
+    <div class="actions">
+        <a href="#" class="links-container">
+            <img src="{% static 'images/orders_history/Login.png' %}" alt="login">
+            <span>ورود | ثبت‌نام</span>
+        </a>
+        <a href="#" class="links-container">
+            <img src="{% static 'images/orders_history/shopping-cart.png' %}" alt="shopping">
+            <span>سبد خرید</span>
+            <span class="numbers">۰</span>
+        </a>
+    </div>
+</div>
+
+<div class="head-container">
+    <a href="#" class="paint">
+        <img src="{% static 'images/orders_history/magicpen.png' %}" style="margin-left: 4px">
+        <span>خودت طراحیش کن!</span>
+    </a>
+    <a href="#" class="items">پوشاک</a>
+    <a href="#" class="items">لوازم خانه</a>
+    <a href="#" class="items">قاب موبایل</a>
+    <a href="#" class="items">اکسسوری</a>
+    <a href="#" class="items">مدرسه و اداره</a>
+    <a href="#" class="items">کارت و پوستر</a>
+    <a href="#" class="items">جشن و مهمانی</a>
+</div>
+
+<!--body-->
+<h3 style="margin-right: 148.5px;margin-top: 32px;font-size: 32px; margin-bottom: 0">پروفایل</h3>
+<div class="body_container">
+    <div class="profile">
+        <div class="face">
+            <div class="profile-pic">
+                <img src="{% static 'images/orders_history/Rectangle%205.png' %}" width="145" height="145">
+                <div class="camera-button">
+                    <img src="{% static 'images/orders_history/camera.svg' %}" width="24" height="24" alt="Camera Icon">
+                </div>
+            </div>
+            <p style="margin: 0; color: #434343">نگار زمانی</p>
+            <p style="margin: 0 0 5px 0; color: #656565">XXXXXXX@Yahoo.com</p>
+        </div>
+        <div class="profile-details">
+            <div class="row">
+                <span class="text-icon">
+                    <p>اعتبار خرید</p>
+                    <button class="add"><img src="{% static 'images/orders_history/Lock%205.svg' %}" width="20" height="20"></button>
+                </span>
+                <p>۱۰۰٬۰۰۰ تومان</p>
+            </div>
+            <div class="row">
+                <p>تعداد طرح ها </p>
+                <p>۴۵</p>
+            </div>
+            <div class="row">
+                <p>تعداد سفارش ها </p>
+                <p>۷۰</p>
+            </div>
+            <a href="{% url 'user_profile' user_id=user.id %}" class="row-bottom">
+                <span class="text-icon">
+                    <img src="{% static 'images/orders_history/home.svg' %}">
+                    <p>داشبورد</p>
+                </span>
+            </a>
+            <a href="#" class="row-bottom">
+                <span class="text-icon" style="color: #B95962">
+                    <img src="{% static 'images/orders_history/activity.svg' %}">
+                    <p>تاریخچه سفارشات</p>
+                </span>
+            </a>
+            <a href="#" class="row-bottom">
+                <span class="text-icon">
+                    <img src="{% static 'images/orders_history/gallery-favorite.svg' %}">
+                    <p>گالری</p>
+                </span>
+            </a>
+            <a href="#" class="row-bottom">
+                <span class="text-icon">
+                    <img src="{% static 'images/orders_history/Lock%203.svg' %}">
+                    <p>آدرس ها</p>
+                </span>
+            </a>
+            <a href="#" class="row-bottom">
+                <span class="text-icon">
+                    <img src="{% static 'images/orders_history/user-tick.svg' %}">
+                    <p>دنبال شوندگان</p>
+                </span>
+            </a>
+            <a href="{% url 'Account_info' user_id=user.id %}" class="row-bottom">
+                <span class="text-icon">
+                    <img src="{% static 'images/orders_history/user.svg' %}">
+                    <p>اطلاعات حساب کاربری</p>
+                </span>
+            </a>
+            <a href="#" class="row-bottom">
+                <span class="text-icon">
+                    <img src="{% static 'images/orders_history/Lock%204.svg' %}">
+                    <p>خروج</p>
+                </span>
+            </a>
+        </div>
+    </div>
+    <div class="order-history" id="current">
+        <h4>تاریخچه سفارشات</h4>
+        <div class="tabs">
+            <a class="tab active" id="current-button1">جاری ۰</a>
+            <a class="tab" id="delivered-button1">تحویل شده ۲۶</a>
+            <a class="tab" id="returned-button1">مرجوع شده ۴</a>
+            <a class="tab" id="canceled-button1">لغو شده ۴</a>
+        </div>
+        <div class="order-content">
+            <p>سفارش جاری وجود ندارد.</p>
+            <img src="{% static 'images/orders_history/Illustration.svg' %}" alt="no orders" width="335.42" height="327">
+        </div>
+    </div>
+    <div class="delivered" id="delivered">
+        <div class="products-delivered">
+            <h4>تاریخچه سفارشات</h4>
+            <div class="tabs">
+                <a class="tab" id="current-button2">جاری ۰</a>
+                <a class="tab active" id="delivered-button2">تحویل شده ۲۶</a>
+                <a class="tab" id="returned-button2">مرجوع شده ۴</a>
+                <a class="tab" id="canceled-button2">لغو شده ۴</a>
+            </div>
+            <div class="items-section">
+                <div class="items-header">
+                    <img src="{% static 'images/orders_history/Lock%202.svg' %}">
+                    <div>
+                        تحویل شده
+                    </div>
+                </div>
+                <div class="items-details">
+                    <div>۳ شهریور ۱۴۰۲</div>
+                    <div>کد سفارش <span style="">۳۵۴۵۳۴۵۲۱</span></div>
+                    <div>مبلغ <span>۵۴۵,۰۰۰ تومان</span></div>
+                    <div>تخفیف <span>۵۴۵,۰۰۰ تومان</span></div>
+                </div>
+                <div class="product">
+                    <img src="{% static 'images/orders_history/Rectangle%2012.png' %}">
+                    <img src="{% static 'images/orders_history/Rectangle%206.png' %}" alt="product">
+                    <img src="{% static 'images/orders_history/Rectangle%208.png' %}" alt="product">
+                    <img src="{% static 'images/orders_history/Rectangle%209.png' %}" alt="product">
+                    <img src="{% static 'images/orders_history/Rectangle%2010.png' %}" alt="product">
+                    <img src="{% static 'images/orders_history/Rectangle%2011.png' %}">
+                    <img src="{% static 'images/orders_history/image.svg' %}">
+                </div>
+                <div class="items-view">
+                    <img src="{% static 'images/orders_history/bill.png' %}">
+                    <a href="#">مشاهده سفارش</a>
+                </div>
+            </div>
+            <div class="items-section">
+                <div class="items-header">
+                    <img src="{% static 'images/orders_history/Lock%202.svg' %}">
+                    <div>
+                        تحویل شده
+                    </div>
+                </div>
+                <div class="items-details">
+                    <div>۳ شهریور ۱۴۰۲</div>
+                    <div>کد سفارش <span style="">۳۵۴۵۳۴۵۲۱</span></div>
+                    <div>مبلغ <span>۵۴۵,۰۰۰ تومان</span></div>
+                    <div>تخفیف <span>۵۴۵,۰۰۰ تومان</span></div>
+                </div>
+                <div class="product">
+                    <img src="{% static 'images/orders_history/Rectangle%2012.png' %}">
+                    <img src="{% static 'images/orders_history/Rectangle%206.png' %}" alt="product">
+                    <img src="{% static 'images/orders_history/Rectangle%208.png' %}" alt="product">
+                    <img src="{% static 'images/orders_history/Rectangle%209.png' %}" alt="product">
+                    <img src="{% static 'images/orders_history/Rectangle%2010.png' %}" alt="product">
+                    <img src="{% static 'images/orders_history/Rectangle%2011.png' %}">
+                    <img src="{% static 'images/orders_history/image.svg' %}">
+                </div>
+                <div class="items-view">
+                    <img src="{% static 'images/orders_history/bill.png' %}">
+                    <a href="#">مشاهده سفارش</a>
+                </div>
+            </div>
+            <div class="items-section">
+                <div class="items-header">
+                    <img src="{% static 'images/orders_history/Lock%202.svg' %}">
+                    <div>
+                        تحویل شده
+                    </div>
+                </div>
+                <div class="items-details">
+                    <div>۳ شهریور ۱۴۰۲</div>
+                    <div>کد سفارش <span style="">۳۵۴۵۳۴۵۲۱</span></div>
+                    <div>مبلغ <span>۵۴۵,۰۰۰ تومان</span></div>
+                    <div>تخفیف <span>۵۴۵,۰۰۰ تومان</span></div>
+                </div>
+                <div class="product">
+                    <img src="{% static 'images/orders_history/Rectangle%2012.png' %}">
+                    <img src="{% static 'images/orders_history/Rectangle%206.png' %}" alt="product">
+                    <img src="{% static 'images/orders_history/Rectangle%208.png' %}" alt="product">
+                    <img src="{% static 'images/orders_history/Rectangle%209.png' %}" alt="product">
+                    <img src="{% static 'images/orders_history/Rectangle%2010.png' %}" alt="product">
+                    <img src="{% static 'images/orders_history/Rectangle%2011.png' %}">
+                    <img src="{% static 'images/orders_history/image.svg' %}">
+                </div>
+                <div class="items-view">
+                    <img src="{% static 'images/orders_history/bill.png' %}">
+                    <a href="#">مشاهده سفارش</a>
+                </div>
+            </div>
+            <div class="items-section">
+                <div class="items-header">
+                    <img src="{% static 'images/orders_history/Lock%202.svg' %}">
+                    <div>
+                        تحویل شده
+                    </div>
+                </div>
+                <div class="items-details">
+                    <div>۳ شهریور ۱۴۰۲</div>
+                    <div>کد سفارش <span style="">۳۵۴۵۳۴۵۲۱</span></div>
+                    <div>مبلغ <span>۵۴۵,۰۰۰ تومان</span></div>
+                    <div>تخفیف <span>۵۴۵,۰۰۰ تومان</span></div>
+                </div>
+                <div class="product">
+                    <img src="{% static 'images/orders_history/Rectangle%2012.png' %}">
+                    <img src="{% static 'images/orders_history/Rectangle%206.png' %}" alt="product">
+                    <img src="{% static 'images/orders_history/Rectangle%208.png' %}" alt="product">
+                    <img src="{% static 'images/orders_history/Rectangle%209.png' %}" alt="product">
+                    <img src="{% static 'images/orders_history/Rectangle%2010.png' %}" alt="product">
+                    <img src="{% static 'images/orders_history/Rectangle%2011.png' %}">
+                    <img src="{% static 'images/orders_history/image.svg' %}">
+                </div>
+                <div class="items-view">
+                    <img src="{% static 'images/orders_history/bill.png' %}">
+                    <a href="#">مشاهده سفارش</a>
+                </div>
+            </div>
+            <div class="items-section">
+                <div class="items-header">
+                    <img src="{% static 'images/orders_history/Lock%202.svg' %}">
+                    <div>
+                        تحویل شده
+                    </div>
+                </div>
+                <div class="items-details">
+                    <div>۳ شهریور ۱۴۰۲</div>
+                    <div>کد سفارش <span style="">۳۵۴۵۳۴۵۲۱</span></div>
+                    <div>مبلغ <span>۵۴۵,۰۰۰ تومان</span></div>
+                    <div>تخفیف <span>۵۴۵,۰۰۰ تومان</span></div>
+                </div>
+                <div class="product">
+                    <img src="{% static 'images/orders_history/Rectangle%2012.png' %}">
+                    <img src="{% static 'images/orders_history/Rectangle%206.png' %}" alt="product">
+                    <img src="{% static 'images/orders_history/Rectangle%208.png' %}" alt="product">
+                    <img src="{% static 'images/orders_history/Rectangle%209.png' %}" alt="product">
+                    <img src="{% static 'images/orders_history/Rectangle%2010.png' %}" alt="product">
+                    <img src="{% static 'images/orders_history/Rectangle%2011.png' %}">
+                    <img src="{% static 'images/orders_history/image.svg' %}">
+                </div>
+                <div class="items-view">
+                    <img src="{% static 'images/orders_history/bill.png' %}">
+                    <a href="#">مشاهده سفارش</a>
+                </div>
+            </div>
+            <div class="items-section">
+                <div class="items-header">
+                    <img src="{% static 'images/orders_history/Lock%202.svg' %}">
+                    <div>
+                        تحویل شده
+                    </div>
+                </div>
+                <div class="items-details">
+                    <div>۳ شهریور ۱۴۰۲</div>
+                    <div>کد سفارش <span style="">۳۵۴۵۳۴۵۲۱</span></div>
+                    <div>مبلغ <span>۵۴۵,۰۰۰ تومان</span></div>
+                    <div>تخفیف <span>۵۴۵,۰۰۰ تومان</span></div>
+                </div>
+                <div class="product">
+                    <img src="{% static 'images/orders_history/Rectangle%2012.png' %}">
+                    <img src="{% static 'images/orders_history/Rectangle%206.png' %}" alt="product">
+                    <img src="{% static 'images/orders_history/Rectangle%208.png' %}" alt="product">
+                    <img src="{% static 'images/orders_history/Rectangle%209.png' %}" alt="product">
+                    <img src="{% static 'images/orders_history/Rectangle%2010.png' %}" alt="product">
+                    <img src="{% static 'images/orders_history/Rectangle%2011.png' %}">
+                    <img src="{% static 'images/orders_history/image.svg' %}">
+                </div>
+                <div class="items-view">
+                    <img src="{% static 'images/orders_history/bill.png' %}">
+                    <a href="#">مشاهده سفارش</a>
+                </div>
+            </div>
+            <div class="items-section">
+                <div class="items-header">
+                    <img src="{% static 'images/orders_history/Lock%202.svg' %}">
+                    <div>
+                        تحویل شده
+                    </div>
+                </div>
+                <div class="items-details">
+                    <div>۳ شهریور ۱۴۰۲</div>
+                    <div>کد سفارش <span style="">۳۵۴۵۳۴۵۲۱</span></div>
+                    <div>مبلغ <span>۵۴۵,۰۰۰ تومان</span></div>
+                    <div>تخفیف <span>۵۴۵,۰۰۰ تومان</span></div>
+                </div>
+                <div class="product">
+                    <img src="{% static 'images/orders_history/Rectangle%2012.png' %}">
+                    <img src="{% static 'images/orders_history/Rectangle%206.png' %}" alt="product">
+                    <img src="{% static 'images/orders_history/Rectangle%208.png' %}" alt="product">
+                    <img src="{% static 'images/orders_history/Rectangle%209.png' %}" alt="product">
+                    <img src="{% static 'images/orders_history/Rectangle%2010.png' %}" alt="product">
+                    <img src="{% static 'images/orders_history/Rectangle%2011.png' %}">
+                    <img src="{% static 'images/orders_history/image.svg' %}">
+                </div>
+                <div class="items-view">
+                    <img src="{% static 'images/orders_history/bill.png' %}">
+                    <a href="#">مشاهده سفارش</a>
+                </div>
+            </div>
+            <div class="items-section">
+                <div class="items-header">
+                    <img src="{% static 'images/orders_history/Lock%202.svg' %}">
+                    <div>
+                        تحویل شده
+                    </div>
+                </div>
+                <div class="items-details">
+                    <div>۳ شهریور ۱۴۰۲</div>
+                    <div>کد سفارش <span style="">۳۵۴۵۳۴۵۲۱</span></div>
+                    <div>مبلغ <span>۵۴۵,۰۰۰ تومان</span></div>
+                    <div>تخفیف <span>۵۴۵,۰۰۰ تومان</span></div>
+                </div>
+                <div class="product">
+                    <img src="{% static 'images/orders_history/Rectangle%2012.png' %}">
+                    <img src="{% static 'images/orders_history/Rectangle%206.png' %}" alt="product">
+                    <img src="{% static 'images/orders_history/Rectangle%208.png' %}" alt="product">
+                    <img src="{% static 'images/orders_history/Rectangle%209.png' %}" alt="product">
+                    <img src="{% static 'images/orders_history/Rectangle%2010.png' %}" alt="product">
+                    <img src="{% static 'images/orders_history/Rectangle%2011.png' %}">
+                    <img src="{% static 'images/orders_history/image.svg' %}">
+                </div>
+                <div class="items-view">
+                    <img src="{% static 'images/orders_history/bill.png' %}">
+                    <a href="#">مشاهده سفارش</a>
+                </div>
+            </div>
+            <div class="items-section">
+                <div class="items-header">
+                    <img src="{% static 'images/orders_history/Lock%202.svg' %}">
+                    <div>
+                        تحویل شده
+                    </div>
+                </div>
+                <div class="items-details">
+                    <div>۳ شهریور ۱۴۰۲</div>
+                    <div>کد سفارش <span style="">۳۵۴۵۳۴۵۲۱</span></div>
+                    <div>مبلغ <span>۵۴۵,۰۰۰ تومان</span></div>
+                    <div>تخفیف <span>۵۴۵,۰۰۰ تومان</span></div>
+                </div>
+                <div class="product">
+                    <img src="{% static 'images/orders_history/Rectangle%2012.png' %}">
+                    <img src="{% static 'images/orders_history/Rectangle%206.png' %}" alt="product">
+                    <img src="{% static 'images/orders_history/Rectangle%208.png' %}" alt="product">
+                    <img src="{% static 'images/orders_history/Rectangle%209.png' %}" alt="product">
+                    <img src="{% static 'images/orders_history/Rectangle%2010.png' %}" alt="product">
+                    <img src="{% static 'images/orders_history/Rectangle%2011.png' %}">
+                    <img src="{% static 'images/orders_history/image.svg' %}">
+                </div>
+                <div class="items-view">
+                    <img src="{% static 'images/orders_history/bill.png' %}">
+                    <a href="#">مشاهده سفارش</a>
+                </div>
+            </div>
+                        <div class="items-section">
+                <div class="items-header">
+                    <img src="{% static 'images/orders_history/Lock%202.svg' %}">
+                    <div>
+                        تحویل شده
+                    </div>
+                </div>
+                <div class="items-details">
+                    <div>۳ شهریور ۱۴۰۲</div>
+                    <div>کد سفارش <span style="">۳۵۴۵۳۴۵۲۱</span></div>
+                    <div>مبلغ <span>۵۴۵,۰۰۰ تومان</span></div>
+                    <div>تخفیف <span>۵۴۵,۰۰۰ تومان</span></div>
+                </div>
+                <div class="product">
+                    <img src="{% static 'images/orders_history/Rectangle%2012.png' %}">
+                    <img src="{% static 'images/orders_history/Rectangle%206.png' %}" alt="product">
+                    <img src="{% static 'images/orders_history/Rectangle%208.png' %}" alt="product">
+                    <img src="{% static 'images/orders_history/Rectangle%209.png' %}" alt="product">
+                    <img src="{% static 'images/orders_history/Rectangle%2010.png' %}" alt="product">
+                    <img src="{% static 'images/orders_history/Rectangle%2011.png' %}">
+                    <img src="{% static 'images/orders_history/image.svg' %}">
+                </div>
+                <div class="items-view">
+                    <img src="{% static 'images/orders_history/bill.png' %}">
+                    <a href="#">مشاهده سفارش</a>
+                </div>
+            </div>
+        </div>
+        <div class="navigation-items">
+            <button><img src="{% static 'images/Carousel%20(1).svg' %}"></button>
+            <div class="pages">
+                <div class="number">۵۰</div>
+                <div class="number more">...</div>
+                <div class="number">۱۰</div>
+                <div class="number">۹</div>
+                <div class="number">۸</div>
+                <div class="number">۷</div>
+                <div class="number">۶</div>
+                <div class="number">۵</div>
+                <div class="number">۴</div>
+                <div class="number">۳</div>
+                <div class="number active-page">۲</div>
+                <div class="number">۱</div>
+            </div>
+            <button><img src="{% static 'images/Clip%20path%20group.svg' %}"></button>
+        </div>
+    </div>
+    <div class="returned" id="returned">
+        <h4>تاریخچه سفارشات</h4>
+        <div class="tabs">
+            <a class="tab" id="current-button3">جاری ۰</a>
+            <a class="tab" id="delivered-button3">تحویل شده ۲۶</a>
+            <a class="tab active" id="returned-button3">مرجوع شده ۴</a>
+            <a class="tab" id="canceled-button3">لغو شده ۴</a>
+        </div>
+        <div class="items-returned">
+            <div class="returned-details">
+                <div>۳ شهریور ۱۴۰۲</div>
+                <div>کد پیگیری مرجوعی <span>۳۵۴۵۳۴۵۲۱</span></div>
+                <button><img src="{% static 'images/orders_history/arrow-left.svg' %}" style="margin-right: 360px;margin-top: 6px"></button>
+            </div>
+            <div class="product-returned">
+                <div class="header-returned">
+                    <img src="{% static 'images/orders_history/close-circle.svg' %}">
+                    <p>درخواست رد شده است</p>
+                </div>
+                <div class="returned-images">
+                    <a href="#"><img src="{% static 'images/orders_history/img.png' %}"></a>
+                    <div class="detail-images">
+                        <p style="color: #434343;font-size: 14px">قاب گوشی گربه ای</p>
+                        <div class="returned-images">
+                            <img src="{% static 'images/orders_history/error.svg' %}">
+                            <p>محصول با طرح اشتباه ارسال شده است </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="items-returned">
+            <div class="returned-details">
+                <div>۳ شهریور ۱۴۰۲</div>
+                <div>کد پیگیری مرجوعی <span>۳۵۴۵۳۴۵۲۱</span></div>
+                <button><img src="{% static 'images/orders_history/arrow-left.svg' %}" style="margin-right: 360px;margin-top: 6px"></button>
+            </div>
+            <div class="product-returned">
+                <div class="header-returned">
+                    <img src="{% static 'images/orders_history/close-circle.svg' %}">
+                    <p>درخواست رد شده است</p>
+                </div>
+                <div class="returned-images">
+                    <a href="#"><img src="{% static 'images/orders_history/img2.png' %}"></a>
+                    <div class="detail-images">
+                        <p style="color: #434343;font-size: 14px">قاب گوشی آیفون</p>
+                        <div class="returned-images">
+                            <img src="{% static 'images/orders_history/error.svg' %}">
+                            <p>محصول با طرح اشتباه ارسال شده است </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="items-returned">
+            <div class="returned-details">
+                <div>۳ شهریور ۱۴۰۲</div>
+                <div>کد پیگیری مرجوعی <span>۳۵۴۵۳۴۵۲۱</span></div>
+                <button><img src="{% static 'images/orders_history/arrow-left.svg' %}" style="margin-right: 360px;margin-top: 6px"></button>
+            </div>
+            <div class="product-returned">
+                <div class="header-returned">
+                    <img src="{% static 'images/orders_history/close-circle.svg' %}">
+                    <p>درخواست رد شده است</p>
+                </div>
+                <div class="returned-images">
+                    <a href="#"><img src="{% static 'images/orders_history/img3.png' %}"></a>
+                    <div class="detail-images">
+                        <p style="color: #434343;font-size: 14px">کیف غذا</p>
+                        <div class="returned-images">
+                            <img src="{% static 'images/orders_history/error.svg' %}">
+                            <p>محصول با طرح اشتباه ارسال شده است </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="items-returned">
+            <div class="returned-details">
+                <div>۳ شهریور ۱۴۰۲</div>
+                <div>کد پیگیری مرجوعی <span>۳۵۴۵۳۴۵۲۱</span></div>
+                <button><img src="{% static 'images/orders_history/arrow-left.svg' %}" style="margin-right: 360px;margin-top: 6px"></button>
+            </div>
+            <div class="product-returned">
+                <div class="header-returned">
+                    <img src="{% static 'images/orders_history/close-circle.svg' %}">
+                    <p>درخواست رد شده است</p>
+                </div>
+                <div class="returned-images">
+                    <a href="#"><img src="{% static 'images/orders_history/img4.png' %}"></a>
+                    <div class="detail-images">
+                        <p style="color: #434343;font-size: 14px">ماگ عکس دار</p>
+                        <div class="returned-images">
+                            <img src="{% static 'images/orders_history/error.svg' %}">
+                            <p>محصول با طرح اشتباه ارسال شده است</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="canceled" id="canceled">
+        <h4>تاریخچه سفارشات</h4>
+        <div class="tabs">
+            <a class="tab" id="current-button4">جاری ۰</a>
+            <a class="tab" id="delivered-button4">تحویل شده ۲۶</a>
+            <a class="tab" id="returned-button4">مرجوع شده ۴</a>
+            <a class="tab active" id="canceled-button4">لغو شده ۴</a>
+        </div>
+        <div class="items-section">
+            <div class="items-header">
+                <img src="{% static 'images/orders_history/cancel.svg' %}">
+                <div>
+                    لغو شده
+                </div>
+            </div>
+            <div class="items-details">
+                <div>۳ شهریور ۱۴۰۲</div>
+                <div>کد سفارش <span style="">۳۵۴۵۳۴۵۲۱</span></div>
+                <div>مبلغ <span>۵۴۵,۰۰۰ تومان</span></div>
+            </div>
+            <div class="product">
+                <img src="{% static 'images/orders_history/Rectangle%2012.png' %}">
+                <img src="{% static 'images/orders_history/Rectangle%206.png' %}" alt="product">
+                <img src="{% static 'images/orders_history/Rectangle%208.png' %}" alt="product">
+                <img src="{% static 'images/orders_history/Rectangle%209.png' %}" alt="product">
+                <img src="{% static 'images/orders_history/Rectangle%2010.png' %}" alt="product">
+                <img src="{% static 'images/orders_history/Rectangle%2011.png' %}">
+                <img src="{% static 'images/orders_history/image.svg' %}">
+            </div>
+            <div class="items-view">
+                <img src="{% static 'images/bill.png' %}">
+                <a href="#">مشاهده سفارش</a>
+            </div>
+        </div>
+        <div class="items-section">
+            <div class="items-header">
+                <img src="{% static 'images/orders_history/cancel.svg' %}">
+                <div>
+                    لغو شده
+                </div>
+            </div>
+            <div class="items-details">
+                <div>۳ شهریور ۱۴۰۲</div>
+                <div>کد سفارش <span style="">۳۵۴۵۳۴۵۲۱</span></div>
+                <div>مبلغ <span>۵۴۵,۰۰۰ تومان</span></div>
+            </div>
+            <div class="product">
+                <img src="{% static 'images/orders_history/Rectangle%2012.png' %}">
+                <img src="{% static 'images/orders_history/Rectangle%206.png' %}" alt="product">
+                <img src="{% static 'images/orders_history/Rectangle%208.png' %}" alt="product">
+                <img src="{% static 'images/orders_history/Rectangle%209.png' %}" alt="product">
+                <img src="{% static 'images/orders_history/Rectangle%2010.png' %}" alt="product">
+                <img src="{% static 'images/orders_history/Rectangle%2011.png' %}">
+                <img src="{% static 'images/orders_history/image.svg' %}">
+            </div>
+            <div class="items-view">
+                <img src="{% static 'images/orders_history/bill.png' %}">
+                <a href="#">مشاهده سفارش</a>
+            </div>
+        </div>
+        <div class="items-section">
+            <div class="items-header">
+                <img src="{% static 'images/orders_history/cancel.svg' %}">
+                <div>
+                    لغو شده
+                </div>
+            </div>
+            <div class="items-details">
+                <div>۳ شهریور ۱۴۰۲</div>
+                <div>کد سفارش <span style="">۳۵۴۵۳۴۵۲۱</span></div>
+                <div>مبلغ <span>۵۴۵,۰۰۰ تومان</span></div>
+            </div>
+            <div class="product">
+                <img src="{% static 'images/orders_history/Rectangle%2012.png' %}">
+                <img src="{% static 'images/orders_history/Rectangle%206.png' %}" alt="product">
+                <img src="{% static 'images/orders_history/Rectangle%208.png' %}" alt="product">
+                <img src="{% static 'images/orders_history/Rectangle%209.png' %}" alt="product">
+                <img src="{% static 'images/orders_history/Rectangle%2010.png' %}" alt="product">
+                <img src="{% static 'images/orders_history/Rectangle%2011.png' %}">
+                <img src="{% static 'images/orders_history/image.svg' %}">
+            </div>
+            <div class="items-view">
+                <img src="{% static 'images/orders_history/bill.png' %}">
+                <a href="#">مشاهده سفارش</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!--footer-->
+<div class="footer1">
+    <div class="container-footer1">
+        <p>برای دریافت آخرین اخبار و تخفیف های جدید، ایمیل خود را وارد نمایید</p>
+        <form class="email-form">
+            <input type="email" class="email" placeholder="ایمیل شما">
+            <button type="submit" class="submit-btn-email">ثبت</button>
+        </form>
+    </div>
+    <div class="social">
+        <p>ما را در شبکه های اجتماعی دنبال کنید</p>
+        <div class="social-img">
+            <a href="#">
+                <img src="{% static 'images/YouTube%20svg.png' %}" style="margin: 20px">
+            </a>
+            <a href="#">
+                <img src="{% static 'images/Pinterest%20svg.png' %}" style="margin: 10px">
+            </a>
+            <a href="#">
+                <img src="{% static 'images/174-1744532_facebook-icon-link-facebook-white-icon-hd-png-fotor-bg-remover-2023041811029%201.png' %}" style="margin: 10px">
+            </a>
+            <a href="#">
+                <img src="{% static 'images/Instagram%20svg.png' %}" style="margin: 10px">
+            </a>
+        </div>
+    </div>
+</div>
+
+<div class="footer2">
+    <div class="links-buttom">
+        <div class="container-footer2">
+            <h3>همراه با کاستومی</h3>
+            <a href="#"> فروش محصولات</a>
+            <a href="#">فرصت همکاری </a>
+            <a href="#"> تماس با ما</a>
+            <a href="#">نقشه سایت </a>
+        </div>
+        <div class="container-footer2">
+            <h3>خدمات مشتریان</h3>
+            <a href="#">سوالات متداول</a>
+            <a href="#">حریم خصوصی</a>
+            <a href="#">ثبت شکایت</a>
+            <a href="#">ضمانت نامه محصولات</a>
+        </div>
+        <div class="container-footer2">
+            <h3>راهنمای خرید</h3>
+            <a href="#">راهنمای ثبت سفارش</a>
+            <a href="#">شیوه های پرداخت</a>
+            <a href="#">نحوه ارسال سفارش ها</a>
+            <a href="#">شرایط بازگرداندن محصول</a>
+        </div>
+    </div>
+
+    <div class="footer2-info">
+        <p style="font-size: 18px;font-weight: bold">فروشگاه اینترنتی کاستومی</p>
+        <div class="call">
+            <span>تماس با پشتیبانی:</span>
+            <span>۰۲۱-۳۴۵۶۰۰۰</span>
+            <span>پاسخگویی ۲۴ ساعته، ۷ روز هفته</span>
+        </div>
+        <div class="certificate">
+                <img src="{% static 'images/01.png' %}"  width="54" height="64">
+                <img src="{% static 'images/02.png' %}"  width="54" height="64">
+                <img src="{% static 'images/03%201.png' %}"  width="54" height="64">
+        </div>
+    </div>
+    <div class="last-text">
+        <p>تمامی حقوق این وبسایت متعلق به فروشگاه اینترنتی کاستومی می‌باشد.</p>
+    </div>
+</div>
+</body>
+</html>

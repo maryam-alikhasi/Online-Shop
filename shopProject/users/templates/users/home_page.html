@@ -1,0 +1,1218 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="fa">
+<head>
+    <meta charset="UTF-8">
+    <title>صفحه اصلی</title>
+    <link rel="stylesheet" href="{% static 'styles/home_page.css' %}">
+    <script src="{% static 'js/home_page.js' %}" defer></script>
+</head>
+<body>
+
+<!--side bar menu in mobile-->
+<div class="menu-overlay"></div>
+<nav class="menu-panel">
+    <ul class="menu-list">
+        <li class="with-nested">
+            <a href="#" class="nested-toggle">
+                <span>پوشاک</span>
+                <img src="{% static 'images/arrow-left.svg' %}">
+            </a>
+            <div class="nested-panel">
+                <div class="nested-header">
+                    <button class="nested-back">
+                        <img src="{% static 'images/arrow-right.svg' %}">
+                        <span style="font-weight: normal">پوشاک</span>
+                    </button>
+                </div>
+                <ul class="nested-list">
+                    <li>
+                        <span class="nested-title">تیشرت زنانه</span>
+                        <div class="nested-items">
+                            <a href="#" class="nested-link"><img src="{% static 'images/woman_tshirt.png' %}"></a>
+                            <a href="#" class="nested-link"><img src="{% static 'images/woman_tshirt.png' %}"></a>
+                            <a href="#" class="nested-link"><img src="{% static 'images/woman_tshirt.png' %}"></a>
+                            <a href="#" class="nested-link"><img src="{% static 'images/woman_tshirt.png' %}"></a>
+                            <a href="#" class="nested-link"><img src="{% static 'images/woman_tshirt.png' %}"></a>
+                        </div>
+                    </li>
+                    <li>
+                        <span class="nested-title">تیشرت مردانه</span>
+                        <div class="nested-items">
+                            <a href="#" class="nested-link"><img src="{% static 'images/mantshirt.png' %}"></a>
+                            <a href="#" class="nested-link"><img src="{% static 'images/mantshirt.png' %}"></a>
+                            <a href="#" class="nested-link"><img src="{% static 'images/mantshirt.png' %}"></a>
+                            <a href="#" class="nested-link"><img src="{% static 'images/mantshirt.png' %}"></a>
+                            <a href="#" class="nested-link"><img src="{% static 'images/mantshirt.png' %}"></a>
+                        </div>
+                    </li>
+                    <li>
+                        <span class="nested-title">تیشرت بچگانه</span>
+                        <div class="nested-items">
+                            <a href="#" class="nested-link"><img src="{% static 'images/kidstshirt.png' %}"></a>
+                            <a href="#" class="nested-link"><img src="{% static 'images/kidstshirt.png' %}"></a>
+                            <a href="#" class="nested-link"><img src="{% static 'images/kidstshirt.png' %}"></a>
+                            <a href="#" class="nested-link"><img src="{% static 'images/kidstshirt.png' %}"></a>
+                            <a href="#" class="nested-link"><img src="{% static 'images/kidstshirt.png' %}"></a>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </li>
+        <li><a href="#"><span>لوازم خانه</span><img src="{% static 'images/arrow-left.svg' %}"></a></li>
+        <li><a href="#"><span>قاب موبایل</span><img src="{% static 'images/arrow-left.svg' %}"></a></li>
+        <li><a href="#"><span>اکسسوری</span><img src="{% static 'images/arrow-left.svg' %}"></a></li>
+        <li><a href="#"><span>مدرسه و اداره</span><img src="{% static 'images/arrow-left.svg' %}"></a></li>
+        <li><a href="#"><span>کارت و پوستر</span><img src="{% static 'images/arrow-left.svg' %}"></a></li>
+        <li><a href="#"><span>جشن و مهمانی</span><img src="{% static 'images/arrow-left.svg' %}"></a></li>
+    </ul>
+    <div class="menu-divider"></div>
+    <ul class="menu-list2 secondary-menu">
+        <li><a href="#"><span>همراه با کاستومی</span><img src="{% static 'images/arrow-left.svg' %}"></a></li>
+        <li><a href="#"><span>خدمات مشتریان</span><img src="{% static 'images/arrow-left.svg' %}"></a></li>
+        <li><a href="#"><span>راهنمای خرید</span><img src="{% static 'images/arrow-left.svg' %}"></a></li>
+    </ul>
+</nav>
+
+<!--buttom menu in search for mobile -->
+<div class="search-overlay-bg"></div>
+<div class="search-panel-wrapper">
+    <div class="panel-header">
+        <span class="panel-title">تیشرت زنانه</span>
+        <button class="panel-close-btn">
+            <img src="{% static 'images/close-circle.svg' %}">
+        </button>
+    </div>
+    <div class="panel-body">
+        <div class="top-results-row">
+            <a href="#" class="product-card product-card--row">
+                <div class="product-thumb" style="background-image: url('{% static 'images/tshirt.png' %}')"></div>
+                <div class="product-details">
+                    <p>تیشرت آستین کوتاه</p>
+                    <span>زنانه کد ۱۲۳۴</span>
+                </div>
+            </a>
+            <a href="#" class="product-card product-card--row">
+                <div class="product-thumb" style="background-image: url('{% static 'images/tshirt.png' %}')"></div>
+                <div class="product-details">
+                    <p>تیشرت آستین کوتاه</p>
+                    <span>زنانه کد ۱۲۳۴</span>
+                </div>
+            </a>
+        </div>
+        <div class="category-links-section">
+            <a href="{% url 'other_product' user_id=user.id %}" class="link-category-all"><h4 style="font-weight: normal">همه کالاهای تیشرت زنانه</h4></a>
+            <ul>
+                <li>
+                    <a href="#" class="link-category">
+                        <img src="{% static 'images/searchbar.svg' %}">
+                        <div class="link-category-text">
+                            <span>تیشرت ورزشی زنانه</span>
+                            <small><small style="color: #898989"> در دسته </small>تیشرت زنانه  </small>
+                        </div>
+                    </a>
+                </li>
+                <li>
+                    <a href="#" class="link-category">
+                        <img src="{% static 'images/searchbar.svg' %}">
+                        <div class="link-category-text">
+                            <span>تیشرت ورزشی زنانه</span>
+                            <small><small style="color: #898989"> در دسته </small>تیشرت زنانه  </small>
+                        </div>
+                    </a>
+                </li>
+                <li>
+                    <a href="#" class="link-category">
+                        <img src="{% static 'images/searchbar.svg' %}">
+                        <div class="link-category-text">
+                            <span>تیشرت ورزشی زنانه</span>
+                            <small><small style="color: #898989"> در دسته </small>تیشرت زنانه  </small>
+                        </div>
+                    </a>
+                </li>
+            </ul>
+        </div>
+        <div class="popular-searches">
+            <h4 style="font-weight: normal">جستجوهای پرطرفدار</h4>
+            <div class="tag-group">
+                <a href="#">استیکر هنری</a>
+                <a href="#">قاب گوشی آیفون</a>
+                <a href="#">ماگ سرامیکی</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!--header-->
+<div class="top-header">
+    <p>با عضویت در کاستومی، اولین سفارش خود را ” رایگان” تحویل بگیرید </p>
+</div>
+<div class="header">
+    <div class="logo-container">
+        <img src="{% static 'images/LOGO.png' %}" alt="logo" width="50px" height="50px">
+        <div class="logo-text">
+            <p style="margin: 0;line-height: 1;"><span style="color: #A72F3B">ک</span>استومی</p>
+            <div class="subtext">فروشگاه اینترنتی</div>
+        </div>
+    </div>
+    <div class="search-container">
+        <input type="text" placeholder="جستجو" class="search-box">
+        <button class="search-icon">
+            <img src="{% static 'images/search-normal.svg' %}" width="24" height="24">
+        </button>
+    </div>
+    <div class="actions">
+        <a href="{% url 'user_profile' user_id=user.id %}" class="links-container">
+            <img src="{% static 'images/user.svg' %}" alt="login">
+            <span>حساب کاربری</span>
+        </a>
+        <a href="#" class="links-container">
+            <img src="{% static 'images/shopping-cart.png' %}" alt="shopping">
+            <span>سبد خرید</span>
+            <span class="numbers">۰</span>
+        </a>
+    </div>
+</div>
+
+<!--header-mobile-->
+<header class="mobile-header">
+    <button class="menu">
+        <img src="{% static 'images/menu.svg' %}">
+    </button>
+
+    <a href="#" class="search-box-mobile">
+        <img src="{% static 'images/search-normal.svg' %}" class="search-icon-mobile">
+        <span class="search-text">
+            جستجو در <strong><span style="color: #A72F3B">ک</span>استومی</strong>
+        </span>
+    </a>
+
+    <a href="#" class="mobile-header__logo-link">
+        <img src="{% static 'images/LOGO.png' %}" class="logo-mobile-header">
+    </a>
+</header>
+
+<div class="head-container">
+    <a href="#" class="paint">
+        <img src="{% static 'images/magicpen.png' %}" style="margin-left: 4px">
+        <span>خودت طراحیش کن!</span>
+    </a>
+    <a href="#" class="items">پوشاک</a>
+    <a href="#" class="items">لوازم خانه</a>
+    <a href="#" class="items" id="mobile">قاب موبایل</a>
+    <a href="#" class="items">اکسسوری</a>
+    <a href="#" class="items">مدرسه و اداره</a>
+    <a href="#" class="items">کارت و پوستر</a>
+    <a href="#" class="items">جشن و مهمانی</a>
+</div>
+
+<div id="iphone-box" class="iphone-box">
+    <a class="iphone-items" href="#">
+        <img src="{% static 'images/iphone.svg' %}">
+        <p class="iphone-font">آیفون</p>
+    </a>
+    <a class="iphone-items" href="#">
+        <img src="{% static 'images/iphone.svg' %}">
+        <p class="iphone-font">آیفون</p>
+    </a>
+    <a class="iphone-items" href="#">
+        <img src="{% static 'images/iphone.svg' %}">
+        <p class="iphone-font">آیفون</p>
+    </a>
+    <a class="iphone-items" href="#">
+        <img src="{% static 'images/iphone.svg' %}">
+        <p class="iphone-font">آیفون</p>
+    </a>
+    <a class="iphone-items" href="#">
+        <img src="{% static 'images/iphone.svg' %}">
+        <p class="iphone-font">آیفون</p>
+    </a>
+    <a class="iphone-items" href="#">
+        <img src="{% static 'images/iphone.svg' %}">
+        <p class="iphone-font">آیفون</p>
+    </a>
+    <a class="iphone-items" href="#">
+        <img src="{% static 'images/iphone.svg' %}">
+        <p class="iphone-font">آیفون</p>
+    </a>
+    <a class="iphone-items" href="#">
+        <img src="{% static 'images/iphone.svg' %}">
+        <p class="iphone-font">آیفون</p>
+    </a>
+    <a class="iphone-items" href="#">
+        <img src="{% static 'images/iphone.svg' %}">
+        <p class="iphone-font">آیفون</p>
+    </a>
+</div>
+
+<!--body-->
+<div class="custom-banner">
+    <div>
+        <h3 class="banner-title">آنلاین شاپ کاستومی</h3>
+        <p class="banner-description">
+            آنلاین شاپ کاستومی محصولات متنوعی داره و این امکان رو بهتون میده خودتون رنگ و طرح و نوشته ‌ی
+            روی محصولات رو انتخاب کنید
+        </p>
+        <div class="banner-buttons">
+            <a href="#" class="btn-filled">
+                <img src="{% static 'images/brush.png' %}" class="icon">
+                شروع طراحی
+            </a>
+            <a href="#" class="btn-outline">دیدن محصولات</a>
+        </div>
+    </div>
+    <img src="{% static 'images/3%20girls%201.svg' %}" width="764" height="355" class="img-banner">
+</div>
+
+<div class="category-section">
+    <div class="section-line">
+        <div class="section">
+            <img src="{% static 'images/medal-star.svg' %}" width="40" height="40" class="img-category">
+            <p class="section-title">دسته بندی محصولات</p>
+        </div>
+        <div class="line"></div>
+        <div class="buttons-mobile">
+            <button class="mobile-move">
+                <img src="{% static 'images/arrow-right1.svg' %}">
+            </button>
+            <button class="mobile-move">
+                <img src="{% static 'images/arrow-left1.svg' %}" >
+            </button>
+        </div>
+    </div>
+    <div class="categories-wrapper">
+        <div class="categories">
+            <a href="#" class="category-card">
+                <img src="{% static 'images/mobile.png' %}">
+                <p class="category-title">قاب موبایل</p>
+            </a>
+            <a href="#" class="category-card">
+                <img src="{% static 'images/cart.png' %}">
+                <p class="category-title">کارت تبریک</p>
+            </a>
+            <a href="#" class="category-card">
+                <img src="{% static 'images/jewelry.png' %}">
+                <p class="category-title">اکسسوری</p>
+            </a>
+            <a href="#" class="category-card">
+                <img src="{% static 'images/book.png' %}">
+                <p class="category-title">لوازم تحریر</p>
+            </a>
+            <a href="#" class="category-card">
+                <img src="{% static 'images/shirt2.png' %}">
+                <p class="category-title">لباس</p>
+            </a>
+            <a href="#" class="category-card">
+                <img src="{% static 'images/design.png' %}">
+                <p class="category-title">دکور خانه</p>
+            </a>
+        </div>
+    </div>
+</div>
+
+<div class="category-section">
+    <div class="section-line">
+        <div class="section">
+            <img src="{% static 'images/medal-star.svg' %}" width="40" height="40" class="img-category">
+            <p class="section-title">پر فروش ترین ها</p>
+        </div>
+        <div class="line1"></div>
+        <div class="link-more"><a href="#">مشاهده بیشتر</a></div>
+    </div>
+    <div class="best-seller">
+        <a href="#" class="best-card">
+            <img src="{% static 'images/img.png' %}">
+            <div class="header-product">
+                <h6>تیشرت زنانه</h6>
+                <button class="like-toggle"><img src="{% static 'images/Like.svg' %}"></button>
+            </div>
+            <p>دارای رنگ‌بندی، قابل طراحی</p>
+            <h5 class="price-card">۱۵۰٬۰۰۰ تومان</h5>
+        </a>
+        <a href="#" class="best-card">
+            <img src="{% static 'images/sirt.png' %}" >
+            <div class="header-product">
+                <h6>تیشرت مردانه</h6>
+                <button class="like-toggle"><img src="{% static 'images/Like.svg' %}"></button>
+            </div>
+            <p>دارای رنگ‌بندی، قابل طراحی</p>
+            <h5 class="price-card">۱۵۰٬۰۰۰ تومان</h5>
+        </a>
+        <a href="#" class="best-card">
+            <img src="{% static 'images/iphone1.png' %}" >
+            <div class="header-product">
+                <h6>قاب موبایل آیفون</h6>
+                <button class="like-toggle"><img src="{% static 'images/Like.svg' %}"></button>
+            </div>
+            <p>دارای رنگ‌بندی، قابل طراحی</p>
+            <h5 class="price-card">۱۵۰٬۰۰۰ تومان</h5>
+        </a>
+        <a href="#" class="best-card">
+            <img src="{% static 'images/hat.png' %}">
+            <div class="header-product">
+                <h6>کلاه مردانه</h6>
+                <button class="like-toggle"><img src="{% static 'images/Like.svg' %}"></button>
+            </div>
+            <p>دارای رنگ‌بندی، قابل طراحی</p>
+            <h5 class="price-card">۱۵۰٬۰۰۰ تومان</h5>
+        </a>
+        <a href="#" class="best-card">
+            <img src="{% static 'images/hat2.png' %}">
+            <div class="header-product">
+                <h6>ماگ قابل طراحی</h6>
+                <button class="like-toggle"><img src="{% static 'images/Like.svg' %}"></button>
+            </div>
+            <p>دارای رنگ‌بندی، قابل طراحی</p>
+            <h5 class="price-card">۱۵۰٬۰۰۰ تومان</h5>
+        </a>
+        <a href="#" class="best-card">
+            <img src="{% static 'images/food.png' %}" >
+            <div class="header-product">
+                <h6>باکس غذا</h6>
+                <button class="like-toggle"><img src="{% static 'images/Like.svg' %}"></button>
+            </div>
+            <p>دارای رنگ‌بندی، قابل طراحی</p>
+            <h5 class="price-card">۱۵۰٬۰۰۰ تومان</h5>
+        </a>
+        <a href="#" class="best-card">
+            <img src="{% static 'images/mag.png' %}">
+            <div class="header-product">
+                <h6>ماگ سرامیکی</h6>
+                <button class="like-toggle"><img src="{% static 'images/Like.svg' %}"></button>
+            </div>
+            <p>دارای رنگ‌بندی، قابل طراحی</p>
+            <h5 class="price-card">۱۵۰٬۰۰۰ تومان</h5>
+        </a>
+        <a href="#" class="best-card">
+            <img src="{% static 'images/notebook.png' %}">
+            <div class="header-product">
+                <h6>دفتر سیمی</h6>
+                <button class="like-toggle"><img src="{% static 'images/Like.svg' %}"></button>
+            </div>
+            <p>دارای رنگ‌بندی، قابل طراحی</p>
+            <h5 class="price-card">۱۵۰٬۰۰۰ تومان</h5>
+        </a>
+    </div>
+</div>
+
+<div class="category-section-mobile">
+    <div class="section-line">
+        <div class="section">
+            <img src="{% static 'images/like-shapes.svg' %}" width="40" height="40" class="img-category">
+            <p class="section-title">طرح های پرطرفدار</p>
+        </div>
+        <div class="line4"></div>
+        <div class="link-more"><a href="#">مشاهده بیشتر</a></div>
+    </div>
+    <div class="favorite-products">
+        <a href="#" class="fave-card">
+            <img src="{% static 'images/stick1.png' %}" class="img-fave">
+            <div class="header-fave">
+                <h6>استیکر</h6>
+                <button class="like-toggle"><img src="{% static 'images/Like.svg' %}"></button>
+            </div>
+            <p>قابل طراحی و چاپ بر روی انواع محصولات</p>
+            <button class="add-gallery">
+                <img src="{% static 'images/gallery-add.svg' %}">
+                <p>افزودن به گالری</p>
+            </button>
+        </a>
+        <a href="#" class="fave-card">
+            <img src="{% static 'images/stick2.png' %}" class="img-fave">
+            <div class="header-fave">
+                <h6>استیکر</h6>
+                <button class="like-toggle"><img src="{% static 'images/Like.svg' %}"></button>
+            </div>
+            <p>قابل طراحی و چاپ بر روی انواع محصولات</p>
+            <button class="add-gallery">
+                <img src="{% static 'images/gallery-add.svg' %}">
+                <p>افزودن به گالری</p>
+            </button>
+        </a>
+        <a href="#" class="fave-card">
+            <img src="{% static 'images/stick3.png' %}" class="img-fave">
+            <div class="header-fave">
+                <h6>استیکر</h6>
+                <button class="like-toggle"><img src="{% static 'images/Like.svg' %}"></button>
+            </div>
+            <p>قابل طراحی و چاپ بر روی انواع محصولات</p>
+            <button class="add-gallery">
+                <img src="{% static 'images/gallery-add.svg' %}" >
+                <p>افزودن به گالری</p>
+            </button>
+        </a>
+        <a href="#" class="fave-card">
+            <img src="{% static 'images/stick4.png' %}" class="img-fave">
+            <div class="header-fave">
+                <h6>استیکر</h6>
+                <button class="like-toggle"><img src="{% static 'images/Like.svg' %}"></button>
+            </div>
+            <p>قابل طراحی و چاپ بر روی انواع محصولات</p>
+            <button class="add-gallery">
+                <img src="{% static 'images/gallery-add.svg' %}" >
+                <p>افزودن به گالری</p>
+            </button>
+        </a>
+        <a href="#" class="fave-card">
+            <img src="{% static 'images/gard.png' %}" class="img-fave">
+            <div class="header-fave">
+                <h6>قاب موبایل</h6>
+                <button class="like-toggle"><img src="{% static 'images/Like.svg' %}"></button>
+            </div>
+            <p>قابل طراحی و چاپ بر روی انواع محصولات</p>
+            <button class="add-gallery">
+                <img src="{% static 'images/gallery-add.svg' %}" >
+                <p>افزودن به گالری</p>
+            </button>
+        </a>
+        <a href="#" class="fave-card">
+            <img src="{% static 'images/flower.png' %}" class="img-fave">
+            <div class="header-fave">
+                <h6>تصویر آفتابگردان</h6>
+                <button class="like-toggle"><img src="{% static 'images/Like.svg' %}"></button>
+            </div>
+            <p>قابل طراحی و چاپ بر روی انواع محصولات</p>
+            <button class="add-gallery">
+                <img src="{% static 'images/gallery-add.svg' %}">
+                <p>افزودن به گالری</p>
+            </button>
+        </a>
+        <a href="#" class="fave-card">
+            <img src="{% static 'images/stick5.png' %}" class="img-fave">
+            <div class="header-fave">
+                <h6>استیکر</h6>
+                <button class="like-toggle"><img src="{% static 'images/Like.svg' %}"></button>
+            </div>
+            <p>قابل طراحی و چاپ بر روی انواع محصولات</p>
+            <button class="add-gallery">
+                <img src="{% static 'images/gallery-add.svg' %}">
+                <p>افزودن به گالری</p>
+            </button>
+        </a>
+        <a href="#" class="fave-card">
+            <img src="{% static 'images/stick6.png' %}" class="img-fave">
+            <div class="header-fave">
+                <h6>استیکر حروف</h6>
+                <button class="like-toggle"><img src="{% static 'images/Like.svg' %}"></button>
+            </div>
+            <p>قابل طراحی و چاپ بر روی انواع محصولات</p>
+            <button class="add-gallery">
+                <img src="{% static 'images/gallery-add.svg' %}">
+                <p>افزودن به گالری</p>
+            </button>
+        </a>
+    </div>
+</div>
+
+<div class="category-section">
+    <div class="section-line">
+        <div class="section">
+            <img src="{% static 'images/discount-shape.svg' %}" width="40" height="40" class="img-category">
+            <p class="section-title">فروش ویژه</p>
+        </div>
+        <div class="line2"></div>
+    </div>
+    <div class="special">
+        <div class="right-special">
+               <a href="#"><img src="{% static 'images/Frame%2026086816.png' %}" width="600" height="576"></a>
+        </div>
+        <div class="grid-left">
+            <a href="#"><img src="{% static 'images/special1.png' %}"></a>
+            <a href="#" class="special2-container">
+                <img src="{% static 'images/special2.png' %}">
+                <img src="{% static 'images/discount.png' %}" class="discount-badge">
+            </a>
+            <a href="#"><img src="{% static 'images/special3.png' %}"></a>
+            <a href="#"><img src="{% static 'images/special4.png' %}"></a>
+        </div>
+    </div>
+</div>
+
+<div class="category-section-desktop">
+    <div class="section-line">
+        <div class="section">
+            <img src="{% static 'images/like-shapes.svg' %}" width="40" height="40" >
+            <p class="section-title">طرح های پرطرفدار</p>
+        </div>
+        <div class="line4"></div>
+        <div class="link-more"><a href="#">مشاهده بیشتر</a></div>
+    </div>
+    <div class="favorite-products">
+        <a href="#" class="fave-card">
+            <img src="{% static 'images/stick1.png' %}">
+            <div class="header-fave">
+                <h6>استیکر</h6>
+                <button class="like-toggle"><img src="{% static 'images/Like.svg' %}"></button>
+            </div>
+            <p>قابل طراحی و چاپ بر روی انواع محصولات</p>
+            <button class="add-gallery">
+                <img src="{% static 'images/gallery-add.svg' %}">
+                <p>افزودن به گالری</p>
+            </button>
+        </a>
+        <a href="#" class="fave-card">
+            <img src="{% static 'images/stick2.png' %}" >
+            <div class="header-fave">
+                <h6>استیکر</h6>
+                <button class="like-toggle"><img src="{% static 'images/Like.svg' %}"></button>
+            </div>
+            <p>قابل طراحی و چاپ بر روی انواع محصولات</p>
+            <button class="add-gallery">
+                <img src="{% static 'images/gallery-add.svg' %}">
+                <p>افزودن به گالری</p>
+            </button>
+        </a>
+        <a href="#" class="fave-card">
+            <img src="{% static 'images/stick3.png' %}" >
+            <div class="header-fave">
+                <h6>استیکر</h6>
+                <button class="like-toggle"><img src="{% static 'images/Like.svg' %}"></button>
+            </div>
+            <p>قابل طراحی و چاپ بر روی انواع محصولات</p>
+            <button class="add-gallery">
+                <img src="{% static 'images/gallery-add.svg' %}" >
+                <p>افزودن به گالری</p>
+            </button>
+        </a>
+        <a href="#" class="fave-card">
+            <img src="{% static 'images/gard.png' %}" >
+            <div class="header-fave">
+                <h6>بک گراند قاب موبایل</h6>
+                <button class="like-toggle"><img src="{% static 'images/Like.svg' %}"></button>
+            </div>
+            <p>قابل طراحی و چاپ بر روی انواع محصولات</p>
+            <button class="add-gallery">
+                <img src="{% static 'images/gallery-add.svg' %}" >
+                <p>افزودن به گالری</p>
+            </button>
+        </a>
+        <a href="#" class="fave-card">
+            <img src="{% static 'images/stick4.png' %}" >
+            <div class="header-fave">
+                <h6>استیکر</h6>
+                <button class="like-toggle"><img src="{% static 'images/Like.svg' %}"></button>
+            </div>
+            <p>قابل طراحی و چاپ بر روی انواع محصولات</p>
+            <button class="add-gallery">
+                <img src="{% static 'images/gallery-add.svg' %}" >
+                <p>افزودن به گالری</p>
+            </button>
+        </a>
+        <a href="#" class="fave-card">
+            <img src="{% static 'images/flower.png' %}">
+            <div class="header-fave">
+                <h6>تصویر آفتابگردان</h6>
+                <button class="like-toggle"><img src="{% static 'images/Like.svg' %}"></button>
+            </div>
+            <p>قابل طراحی و چاپ بر روی انواع محصولات</p>
+            <button class="add-gallery">
+                <img src="{% static 'images/gallery-add.svg' %}">
+                <p>افزودن به گالری</p>
+            </button>
+        </a>
+        <a href="#" class="fave-card">
+            <img src="{% static 'images/stick5.png' %}">
+            <div class="header-fave">
+                <h6>استیکر</h6>
+                <button class="like-toggle"><img src="{% static 'images/Like.svg' %}"></button>
+            </div>
+            <p>قابل طراحی و چاپ بر روی انواع محصولات</p>
+            <button class="add-gallery">
+                <img src="{% static 'images/gallery-add.svg' %}">
+                <p>افزودن به گالری</p>
+            </button>
+        </a>
+        <a href="#" class="fave-card">
+            <img src="{% static 'images/stick6.png' %}">
+            <div class="header-fave">
+                <h6>استیکر حروف</h6>
+                <button class="like-toggle"><img src="{% static 'images/Like.svg' %}"></button>
+            </div>
+            <p>قابل طراحی و چاپ بر روی انواع محصولات</p>
+            <button class="add-gallery">
+                <img src="{% static 'images/gallery-add.svg' %}">
+                <p>افزودن به گالری</p>
+            </button>
+        </a>
+    </div>
+</div>
+
+<div class="category-section">
+    <div class="section-line">
+        <div class="section">
+            <img src="{% static 'images/star.svg' %}" width="40" height="40" class="img-category">
+            <p class="section-title">طراحان برتر</p>
+        </div>
+        <div class="line5"></div>
+    </div>
+    <div class="designers">
+        <a href="#" class="designer-card">
+            <div class="top-card">
+                <div class="face"><img src="{% static 'images/Profile%20pic.svg' %}"></div>
+            </div>
+            <div class="header-designer">
+                <p>نگار زمانی</p>
+            </div>
+            <div class="info">
+                <div class="sub-info">
+                    <p>دنبال کنندگان: ۴۰۰</p>
+                </div>
+                <div class="sub-info">
+                    <p>تعداد طرح ها:۵۶</p>
+                </div>
+                <div class="sub-info">
+                    <p>آمار فروش: ۳۷۰</p>
+                </div>
+            </div>
+            <div class="picture-designer">
+                <div><img src="{% static 'images/des1-1.png' %}"></div>
+                <div><img src="{% static 'images/des1-2.png' %}"></div>
+                <div><img src="{% static 'images/des1-3.png' %}"></div>
+            </div>
+            <button class="follow">
+                <img src="{% static 'images/profile-add.svg' %}">
+                <p>دنبال کردن</p>
+            </button>
+        </a>
+        <a href="#" class="designer-card">
+            <div class="top-card">
+                <div class="face"><img src="{% static 'images/Profile%20pic1.svg' %}"></div>
+            </div>
+            <div class="header-designer">
+                <p>شهرام طالبی</p>
+            </div>
+            <div class="info">
+                <div class="sub-info">
+                    <p>دنبال کنندگان: ۴۰۰</p>
+                </div>
+                <div class="sub-info">
+                    <p>تعداد طرح ها:۵۶</p>
+                </div>
+                <div class="sub-info">
+                    <p>آمار فروش: ۳۷۰</p>
+                </div>
+            </div>
+            <div class="picture-designer">
+                <div><img src="{% static 'images/2-1.png' %}"></div>
+                <div><img src="{% static 'images/2-2.png' %}"></div>
+                <div><img src="{% static 'images/2-3.png' %}"></div>
+            </div>
+            <button class="follow">
+                <img src="{% static 'images/profile-add.svg' %}">
+                <p>دنبال کردن</p>
+            </button>
+        </a>
+        <a href="#" class="designer-card">
+            <div class="top-card">
+                <div class="face"><img src="{% static 'images/Profile%20pic2.svg' %}"></div>
+            </div>
+            <div class="header-designer">
+                <p>سارا محمدی</p>
+            </div>
+            <div class="info">
+                <div class="sub-info">
+                    <p>دنبال کنندگان: ۴۰۰</p>
+                </div>
+                <div class="sub-info">
+                    <p>تعداد طرح ها:۵۶</p>
+                </div>
+                <div class="sub-info">
+                    <p>آمار فروش: ۳۷۰</p>
+                </div>
+            </div>
+            <div class="picture-designer">
+                <div><img src="{% static 'images/3-1.png' %}"></div>
+                <div><img src="{% static 'images/3-2.png' %}"></div>
+                <div><img src="{% static 'images/3-3.png' %}"></div>
+            </div>
+            <button class="follow">
+                <img src="{% static 'images/profile-add.svg' %}">
+                <p>دنبال کردن</p>
+            </button>
+        </a>
+        <a href="#" class="designer-card">
+            <div class="top-card">
+                <div class="face"><img src="{% static 'images/Profile%20pic3.svg' %}"></div>
+            </div>
+            <div class="header-designer">
+                <p>آرش نظری</p>
+            </div>
+            <div class="info">
+                <div class="sub-info">
+                    <p>دنبال کنندگان: ۴۰۰</p>
+                </div>
+                <div class="sub-info">
+                    <p>تعداد طرح ها:۵۶</p>
+                </div>
+                <div class="sub-info">
+                    <p>آمار فروش: ۳۷۰</p>
+                </div>
+            </div>
+            <div class="picture-designer">
+                <div><img src="{% static 'images/4-1.png' %}"></div>
+                <div><img src="{% static 'images/4-2.png' %}"></div>
+                <div><img src="{% static 'images/4-3.png' %}"></div>
+            </div>
+            <button class="follow">
+                <img src="{% static 'images/profile-add.svg' %}">
+                <p>دنبال کردن</p>
+            </button>
+        </a>
+        <a href="#" class="designer-card">
+            <div class="top-card">
+                <div class="face"><img src="{% static 'images/Profile%20pic4.svg' %}"></div>
+            </div>
+            <div class="header-designer">
+                <p>سمانه جوادی</p>
+            </div>
+            <div class="info">
+                <div class="sub-info">
+                    <p>دنبال کنندگان: ۴۰۰</p>
+                </div>
+                <div class="sub-info">
+                    <p>تعداد طرح ها:۵۶</p>
+                </div>
+                <div class="sub-info">
+                    <p>آمار فروش: ۳۷۰</p>
+                </div>
+            </div>
+            <div class="picture-designer">
+                <div><img src="{% static 'images/5-1.png' %}"></div>
+                <div><img src="{% static 'images/5-2.png' %}"></div>
+                <div><img src="{% static 'images/5-3.png' %}"></div>
+            </div>
+            <button class="follow">
+                <img src="{% static 'images/profile-add.svg' %}">
+                <p>دنبال کردن</p>
+            </button>
+        </a>
+        <a href="#" class="designer-card">
+            <div class="top-card">
+                <div class="face"><img src="{% static 'images/Profile%20pic5.svg' %}"></div>
+            </div>
+            <div class="header-designer">
+                <p>سعید سلیمی</p>
+            </div>
+            <div class="info">
+                <div class="sub-info">
+                    <p>دنبال کنندگان: ۴۰۰</p>
+                </div>
+                <div class="sub-info">
+                    <p>تعداد طرح ها:۵۶</p>
+                </div>
+                <div class="sub-info">
+                    <p>آمار فروش: ۳۷۰</p>
+                </div>
+            </div>
+            <div class="picture-designer">
+                <div><img src="{% static 'images/6-1.png' %}"></div>
+                <div><img src="{% static 'images/6-2.png' %}"></div>
+                <div><img src="{% static 'images/6-3.png' %}"></div>
+            </div>
+            <button class="follow">
+                <img src="{% static 'images/profile-add.svg' %}">
+                <p>دنبال کردن</p>
+            </button>
+        </a>
+        <a href="#" class="designer-card">
+            <div class="top-card">
+                <div class="face"><img src="{% static 'images/Profile%20pic6.svg' %}"></div>
+            </div>
+            <div class="header-designer">
+                <p>مرجان جعفری</p>
+            </div>
+            <div class="info">
+                <div class="sub-info">
+                    <p>دنبال کنندگان: ۴۰۰</p>
+                </div>
+                <div class="sub-info">
+                    <p>تعداد طرح ها:۵۶</p>
+                </div>
+                <div class="sub-info">
+                    <p>آمار فروش: ۳۷۰</p>
+                </div>
+            </div>
+            <div class="picture-designer">
+                <div><img src="{% static 'images/7-1.png' %}"></div>
+                <div><img src="{% static 'images/7-2.png' %}"></div>
+                <div><img src="{% static 'images/7-3.png' %}"></div>
+            </div>
+            <button class="follow">
+                <img src="{% static 'images/profile-add.svg' %}">
+                <p>دنبال کردن</p>
+            </button>
+        </a>
+        <a href="#" class="designer-card">
+            <div class="top-card">
+                <div class="face"><img src="{% static 'images/Profile%20pic7.svg' %}"></div>
+            </div>
+            <div class="header-designer">
+                <p>نیلوفر کریمی</p>
+            </div>
+            <div class="info">
+                <div class="sub-info">
+                    <p>دنبال کنندگان: ۴۰۰</p>
+                </div>
+                <div class="sub-info">
+                    <p>تعداد طرح ها:۵۶</p>
+                </div>
+                <div class="sub-info">
+                    <p>آمار فروش: ۳۷۰</p>
+                </div>
+            </div>
+            <div class="picture-designer">
+                <div><img src="{% static 'images/8-1.png' %}"></div>
+                <div><img src="{% static 'images/8-2.png' %}"></div>
+                <div><img src="{% static 'images/8-3.png' %}"></div>
+            </div>
+            <button class="follow">
+                <img src="{% static 'images/profile-add.svg' %}">
+                <p>دنبال کردن</p>
+            </button>
+        </a>
+    </div>
+</div>
+
+<div class="two-banner">
+    <div class="banner-one">
+        <div class="title-banner">
+            <h4>محصولات مناسب هدیه دادن به آقایان</h4>
+            <a href="#" class="button-banner">دیدن محصولات</a>
+        </div>
+        <img src="{% static 'images/dadi%201.png' %}" class="banner-image">
+    </div>
+    <div class="banner-two">
+        <div class="title-banner">
+            <h4>محصولات مناسب هدیه دادن به خانم ها</h4>
+            <a href="#" class="button-banner">دیدن محصولات</a>
+        </div>
+        <img src="{% static 'images/mom%201.png' %}" class="banner-image">
+    </div>
+</div>
+
+
+<div class="category-section">
+    <div class="section-line">
+        <div class="section">
+            <img src="{% static 'images/brush.svg' %}" width="40" height="40" class="img-category">
+            <p class="section-title">جدیدترین طرح ها</p>
+        </div>
+        <div class="line6"></div>
+        <div class="link-more"><a href="#">مشاهده بیشتر</a></div>
+    </div>
+    <div class="best-seller , best-seller-desktop" >
+        <div class="first">
+            <h4> محصولاتی که طراحی شده رو ببینید و در صورت نیاز طرحشون رو مطابق سلیقه خودتون تغییر بدید</h4>
+            <div class="picture-first">
+                <img class="img-top" src="{% static 'images/Group2.png' %}">
+                <img class="img-bottom" src="{% static 'images/Group1.png' %}">
+            </div>
+        </div>
+        <a href="#" class="best-card">
+            <img src="{% static 'images/new1.png' %}">
+            <div class="header-product">
+                <h6>آباژور</h6>
+                <button class="like-toggle"><img src="{% static 'images/Like.svg' %}"></button>
+            </div>
+            <p>دارای رنگ‌ بندی، قابل طراحی</p>
+            <h5 class="price-card">۱۵۰٬۰۰۰ تومان</h5>
+        </a>
+        <a href="#" class="best-card">
+            <img src="{% static 'images/new2.png' %}">
+            <div class="header-product">
+                <h6>ماگ قابل طراحی</h6>
+                <button class="like-toggle"><img src="{% static 'images/Like.svg' %}"></button>
+            </div>
+            <p>دارای رنگ‌ بندی، قابل طراحی</p>
+            <h5 class="price-card">۱۵۰٬۰۰۰ تومان</h5>
+        </a>
+        <a href="#" class="best-card">
+            <img src="{% static 'images/new3.png' %}">
+            <div class="header-product">
+                <h6>کیف زنانه</h6>
+                <button class="like-toggle"><img src="{% static 'images/Like.svg' %}"></button>
+            </div>
+            <p>دارای رنگ‌ بندی، قابل طراحی</p>
+            <h5 class="price-card">۱۵۰٬۰۰۰ تومان</h5>
+        </a>
+        <a href="#" class="best-card">
+            <img src="{% static 'images/new4.png' %}">
+            <div class="header-product">
+                <h6>چمدان</h6>
+                <button class="like-toggle"><img src="{% static 'images/Like.svg' %}"></button>
+            </div>
+            <p>دارای رنگ‌ بندی، قابل طراحی</p>
+            <h5 class="price-card">۱۵۰٬۰۰۰ تومان</h5>
+        </a>
+        <a href="#" class="best-card">
+            <img src="{% static 'images/new5.png' %}">
+            <div class="header-product">
+                <h6>تیشرت زنانه</h6>
+                <button class="like-toggle"><img src="{% static 'images/Like.svg' %}"></button>
+            </div>
+            <p>دارای رنگ‌ بندی، قابل طراحی</p>
+            <h5 class="price-card">۱۵۰٬۰۰۰ تومان</h5>
+        </a>
+        <a href="#" class="best-card">
+            <img src="{% static 'images/new6.png' %}">
+            <div class="header-product">
+                <h6>کوسن</h6>
+                <button class="like-toggle"><img src="{% static 'images/Like.svg' %}"></button>
+            </div>
+            <p>دارای رنگ‌ بندی، قابل طراحی</p>
+            <h5 class="price-card">۱۵۰٬۰۰۰ تومان</h5>
+        </a>
+        <a href="#" class="best-card">
+            <img src="{% static 'images/new7.png' %}">
+            <div class="header-product">
+                <h6>ساک هدیه</h6>
+                <button class="like-toggle"><img src="{% static 'images/Like.svg' %}"></button>
+            </div>
+            <p>دارای رنگ‌ بندی، قابل طراحی</p>
+            <h5 class="price-card">۱۵۰٬۰۰۰ تومان</h5>
+        </a>
+    </div>
+    <div class="mobile-best-seller">
+        <div class="mobile-first">
+            <h4>محصولاتی که طراحی شده رو ببینید و در صورت نیاز طرحشون رو مطابق سلیقه خودتون تغییر بدید</h4>
+            <div class="picture-first">
+                <img class="img-bottom" src="{% static 'images/Group1.png' %}">
+                <img class="img-top" src="{% static 'images/Group2.png' %}">
+            </div>
+        </div>
+        <div class="mobile-products">
+            <a href="#" class="mobile-card">
+                <img src="{% static 'images/new1.png' %}">
+                <div class="mobile-header-product">
+                    <h6>آباژور</h6>
+                <button class="like-toggle"><img src="{% static 'images/Like.svg' %}"></button>
+                </div>
+                <p>دارای رنگ‌ بندی، قابل طراحی</p>
+                <h5 class="mobile-price-card">۱۵۰٬۰۰۰ تومان</h5>
+            </a>
+
+            <a href="#" class="mobile-card">
+                <img src="{% static 'images/new2.png' %}">
+                <div class="mobile-header-product">
+                    <h6>ماگ قابل طراحی</h6>
+                <button class="like-toggle"><img src="{% static 'images/Like.svg' %}"></button>
+                </div>
+                <p>دارای رنگ‌ بندی، قابل طراحی</p>
+                <h5 class="mobile-price-card">۱۵۰٬۰۰۰ تومان</h5>
+            </a>
+
+            <a href="#" class="mobile-card">
+                <img src="{% static 'images/new3.png' %}">
+                <div class="mobile-header-product">
+                    <h6>کیف زنانه</h6>
+                <button class="like-toggle"><img src="{% static 'images/Like.svg' %}"></button>
+                </div>
+                <p>دارای رنگ‌ بندی، قابل طراحی</p>
+                <h5 class="mobile-price-card">۱۵۰٬۰۰۰ تومان</h5>
+            </a>
+
+            <a href="#" class="mobile-card">
+                <img src="{% static 'images/new4.png' %}">
+                <div class="mobile-header-product">
+                    <h6>چمدان</h6>
+                <button class="like-toggle"><img src="{% static 'images/Like.svg' %}"></button>
+                </div>
+                <p>دارای رنگ‌ بندی، قابل طراحی</p>
+                <h5 class="mobile-price-card">۱۵۰٬۰۰۰ تومان</h5>
+            </a>
+        </div>
+    </div>
+</div>
+
+<div class="wedding-card-section">
+    <div class="image-layout">
+        <img src="{% static 'images/bride1.png' %}" class="tall-image">
+        <div class="grid-center">
+            <img src="{% static 'images/cake%20wedding.png' %}">
+            <img src="{% static 'images/Frame%20flower.png' %}">
+            <img src="{% static 'images/wedding%20stand.png' %}">
+            <img src="{% static 'images/wedding%20table.png' %}">
+        </div>
+        <img src="{% static 'images/Frame%20red%20table.png' %}" alt="right" class="tall-image">
+    </div>
+    <div class="design">
+        <p class="title">کارت دعوت عروسی رو خودتون طراحی کنید</p>
+        <a href="#" class="btn-filled2">
+            <img src="{% static 'images/brush.png' %}" class="icon">
+            شروع طراحی
+        </a>
+    </div>
+</div>
+
+<div class="category-section">
+    <div class="section-line">
+        <div class="section">
+            <img src="{% static 'images/like.png' %}" width="40" height="40" class="img-category">
+            <p class="section-title">علاقه مندی ها</p>
+        </div>
+        <div class="line3"></div>
+    </div>
+    <div class="favorite">
+        <a href="#" class="fav-card">
+            <img src="{% static 'images/bag.png' %}" class="img-fave">
+            <div class="title-heart">
+                <h6 class="category-title">کیف زنانه</h6>
+                <button class="like-toggle2"><img src="{% static 'images/Like2.svg' %}"></button>
+            </div>
+            <p class="description">دارای رنگ بندی، قابل طراحی</p>
+            <div class="card-bottom">
+                <h5 class="price">۱۵۰,۰۰۰ تومان</h5>
+            </div>
+        </a>
+        <a href="#" class="fav-card">
+            <img src="{% static 'images/sock.png' %}" class="img-fave">
+            <div class="title-heart">
+                <h6 class="category-title">جوراب زنانه</h6>
+                <button class="like-toggle2"><img src="{% static 'images/Like2.svg' %}"></button>
+            </div>
+            <p class="description">دارای رنگ بندی، قابل طراحی</p>
+            <div class="card-bottom">
+                <h5 class="price">۱۵۰,۰۰۰ تومان</h5>
+            </div>
+        </a>
+        <a href="#" class="fav-card">
+            <img src="{% static 'images/iphone.png' %}" class="img-fave">
+            <div class="title-heart">
+                <h6 class="category-title">قاب موبایل آیفون</h6>
+                <button class="like-toggle2"><img src="{% static 'images/Like2.svg' %}"></button>
+            </div>
+            <p class="description">دارای رنگ بندی، قابل طراحی</p>
+            <div class="card-bottom">
+                <h5 class="price">۱۵۰,۰۰۰ تومان</h5>
+            </div>
+        </a>
+        <a href="#" class="fav-card">
+            <img src="{% static 'images/mens%20shirt.png' %}" class="img-fave">
+            <div class="title-heart">
+                <h6 class="category-title">تیشرت مردانه</h6>
+                <button class="like-toggle2"><img src="{% static 'images/Like2.svg' %}"></button>
+            </div>
+            <p class="description">دارای رنگ بندی، قابل طراحی</p>
+            <div class="card-bottom">
+                <h5 class="price">۱۵۰,۰۰۰ تومان</h5>
+            </div>
+        </a>
+        <button class="arrow-overlay">
+            <img src="{% static 'images/clip.svg' %}" alt="arrow">
+        </button>
+    </div>
+</div>
+
+<!--footer_mobile-->
+<div class="footer_mobile">
+    <p>تماس با پشتیبانی: ۰۲۱-۳۴۵۶۰۰۰</p>
+    <p>پاسخگویی ۲۴ ساعته، ۷ روز هفته</p>
+        <div class="social-img-mobile">
+            <a href="#">
+                <img src="{% static 'images/YouTube%20svg.png' %}" style="margin-top: 4px">
+            </a>
+            <a href="#">
+                <img src="{% static 'images/Pinterest%20svg.png' %}" >
+            </a>
+            <a href="#">
+                <img src="{% static 'images/174-1744532_facebook-icon-link-facebook-white-icon-hd-png-fotor-bg-remover-2023041811029%201.png' %}" >
+            </a>
+            <a href="#">
+                <img src="{% static 'images/Instagram%20svg.png' %}">
+            </a>
+        </div>
+    <p>تمامی حقوق این وبسایت متعلق به فروشگاه اینترنتی کاستومی می‌باشد.</p>
+</div>
+
+
+<div class="sidebar-mobile">
+    <a class="sidebar-options">
+        <img src="{% static 'images/user_profile/home-2.svg' %}">
+        <p>خانه</p>
+    </a>
+    <a class="sidebar-options">
+        <img src="{% static 'images/user_profile/designtools.svg' %}">
+        <p>طراحی سفارشی</p>
+    </a>
+    <a href="{% url 'cart' user_id=user.id %}" class="sidebar-options">
+        <img src="{% static 'images/user_profile/shopping-cart.svg' %}">
+        <p>سبد خرید</p>
+    </a>
+    <a href="{% url 'user_profile' user_id=user.id %}" class="sidebar-options">
+        <img src="{% static 'images/user_profile/userside.svg' %}">
+        <p>پروفایل</p>
+    </a>
+</div>
+
+<!--footer_Desktop-->
+<div class="footer1">
+    <div class="container-footer1">
+        <p>برای دریافت آخرین اخبار و تخفیف های جدید، ایمیل خود را وارد نمایید</p>
+        <form class="email-form">
+            <input type="email" class="email" placeholder="ایمیل شما">
+            <button type="submit" class="submit-btn-email">ثبت</button>
+        </form>
+    </div>
+    <div class="social">
+        <p>ما را در شبکه های اجتماعی دنبال کنید</p>
+        <div class="social-img">
+            <a href="#">
+                <img src="{% static 'images/YouTube%20svg.png' %}" style="margin: 20px">
+            </a>
+            <a href="#">
+                <img src="{% static 'images/Pinterest%20svg.png' %}" style="margin: 10px">
+            </a>
+            <a href="#">
+                <img src="{% static 'images/174-1744532_facebook-icon-link-facebook-white-icon-hd-png-fotor-bg-remover-2023041811029%201.png' %}" style="margin: 10px">
+            </a>
+            <a href="#">
+                <img src="{% static 'images/Instagram%20svg.png' %}" style="margin: 10px">
+            </a>
+        </div>
+    </div>
+</div>
+
+<div class="footer2">
+    <div class="links-buttom">
+        <div class="container-footer2">
+            <h3>همراه با کاستومی</h3>
+            <a href="#"> فروش محصولات</a>
+            <a href="#">فرصت همکاری </a>
+            <a href="#"> تماس با ما</a>
+            <a href="#">نقشه سایت </a>
+        </div>
+        <div class="container-footer2">
+            <h3>خدمات مشتریان</h3>
+            <a href="#">سوالات متداول</a>
+            <a href="#">حریم خصوصی</a>
+            <a href="#">ثبت شکایت</a>
+            <a href="#">ضمانت نامه محصولات</a>
+        </div>
+        <div class="container-footer2">
+            <h3>راهنمای خرید</h3>
+            <a href="#">راهنمای ثبت سفارش</a>
+            <a href="#">شیوه های پرداخت</a>
+            <a href="#">نحوه ارسال سفارش ها</a>
+            <a href="#">شرایط بازگرداندن محصول</a>
+        </div>
+    </div>
+
+    <div class="footer2-info">
+        <p style="font-size: 18px;font-weight: bold">فروشگاه اینترنتی کاستومی</p>
+        <div class="call">
+            <span>تماس با پشتیبانی:</span>
+            <span>۰۲۱-۳۴۵۶۰۰۰</span>
+            <span>پاسخگویی ۲۴ ساعته، ۷ روز هفته</span>
+        </div>
+        <div class="certificate">
+                <img src="{% static 'images/01.png' %}"  width="54" height="64">
+                <img src="{% static 'images/02.png' %}"  width="54" height="64">
+                <img src="{% static 'images/03%201.png' %}"  width="54" height="64">
+        </div>
+    </div>
+    <div class="last-text">
+        <p>تمامی حقوق این وبسایت متعلق به فروشگاه اینترنتی کاستومی می‌باشد.</p>
+    </div>
+</div>
+</body>
+</html>

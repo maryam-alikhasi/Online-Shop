@@ -1,0 +1,338 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="fa">
+<head>
+    <meta charset="UTF-8">
+    <title>محصول انتخاب شده</title>
+    <link rel="stylesheet" href="{% static 'styles/selected-product.css' %}">
+    <script src="{% static 'js/selected_product.js' %}" defer></script>
+</head>
+<body>
+
+<!--header-->
+<div class="header">
+    <div class="logo-container">
+        <img src="{% static 'images/selected_product/LOGO.png' %}" alt="logo" width="50px" height="50px">
+        <div class="logo-text">
+            <p style="margin: 0;line-height: 1;"><span style="color: #A72F3B">ک</span>استومی</p>
+            <div class="subtext">فروشگاه اینترنتی</div>
+        </div>
+    </div>
+    <div class="search-container">
+        <input type="text" placeholder="جستجو" class="search-box">
+        <button class="search-icon">
+            <img src="{% static 'images/selected_product/search-normal.svg' %}" width="24" height="24">
+        </button>
+    </div>
+    <div class="actions">
+        <a href="#" class="links-container">
+            <img src="{% static 'images/selected_product/Login.png' %}" alt="login">
+            <span>ورود | ثبت‌نام</span>
+        </a>
+        <a href="#" class="links-container">
+            <img src="{% static 'images/selected_product/shopping-cart.png' %}" alt="shopping">
+            <span>سبد خرید</span>
+            <span class="numbers">۰</span>
+        </a>
+    </div>
+</div>
+
+<div class="head-container">
+    <a href="#" class="paint">
+        <img src="{% static 'images/selected_product/magicpen.png' %}" style="margin-left: 4px">
+        <span>خودت طراحیش کن!</span>
+    </a>
+    <a href="#" class="items">پوشاک</a>
+    <a href="#" class="items">لوازم خانه</a>
+    <a href="#" class="items">قاب موبایل</a>
+    <a href="#" class="items">اکسسوری</a>
+    <a href="#" class="items">مدرسه و اداره</a>
+    <a href="#" class="items">کارت و پوستر</a>
+    <a href="#" class="items">جشن و مهمانی</a>
+</div>
+
+<div class="product-container">
+    <div class="images-column">
+    <img src="{% static 'images/selected_product/img%201.png' %}" class="images" alt="زاویه اول">
+    <img src="{% static 'images/selected_product/img%202.png' %}" class="images" alt="زاویه دوم">
+    <img src="{% static 'images/selected_product/img%203.png' %}" class="images" alt="زاویه سوم">
+    <img src="{% static 'images/selected_product/img%204.png' %}" class="images" alt="زاویه چهارم">
+    <button class="circle-button">
+        <img src="{% static 'images/selected_product/button_down.svg' %}">
+    </button>
+    </div>
+    <div class="image-wrapper">
+        <img src="{% static 'images/selected_product/imgproduct.png' %}" alt="تصویر محصول" width="530" height="576">
+        <div class="color-overlay">
+            <div class="color-options">
+                <div class="color-circle yellow"></div>
+                <div class="color-circle green"></div>
+                <div class="color-circle red selected">
+                    <img src="{% static 'images/selected_product/tick.png' %}" class="checkmark">
+                </div>
+                <div class="color-circle black"></div>
+                <div class="color-circle white"></div>
+            </div>
+        </div>
+    </div>
+    <div class="product-details">
+        <h4>مشخصات محصول</h4>
+        <p>جنس: نخ، پلی استر</p>
+        <p>شستشو: با دست</p>
+        <p>سایزها: S, M, L, XL, XXL, XXXL</p>
+        <p>رنگ‌ها: مشکی، سفید، قرمز، سبز، نارنجی، زرشکی، بنفش</p>
+        <p>قد: ۶۰ سانتی‌ متر</p>
+        <select class="size-select" style="background-image: url('{% static "images/selected_product/arrow-down.svg" %}');">
+            <option>S</option>
+            <option selected>M</option>
+            <option>L</option>
+            <option>XL</option>
+            <option>XXL</option>
+            <option>XXXL</option>
+        </select>
+        <div class="price">۱۲۷٬۰۰۰ تومان</div>
+        <div class="buttons">
+            <div class="cart">
+                <button><a href="{% url 'cart' user_id=user.id %}" style="text-decoration: none;color: white;">افزودن به سبد</a></button>
+                <img src="{% static 'images/selected_product/shopping-cart.svg' %}" width="24" height="24">
+            </div>
+            <div class="cart2">
+                <button>شخصی سازی محصول</button>
+                <img src="{% static 'images/selected_product/magicpen.svg' %}" width="24" height="24">
+            </div>
+        </div>
+    </div>
+</div>
+<div class="bottom-section">
+    <div class="score">
+        <h4 style="color: #86262F;font-size: 24px;font-weight: bold;margin-bottom: 0">امتیاز و دیدگاه کاربران</h4>
+        <h5 style="color: #898989; font-size: 20px; margin-top: 32px;margin-bottom: 0"><span>۴.۱</span> از ۵</h5>
+        <div class="stars">
+            <img src="{% static 'images/selected_product/Component%204.svg' %}" width="16" height="16">
+            <img src="{% static 'images/selected_product/Component%204.svg' %}" width="16" height="16">
+            <img src="{% static 'images/selected_product/Component%204.svg' %}" width="16" height="16">
+            <img src="{% static 'images/selected_product/Component%204.svg' %}" width="16" height="16">
+            <img src="{% static 'images/selected_product/Component%202.svg' %}" width="16" height="16">
+            <p>از مجموع ۱۲۰ امتیاز</p>
+        </div>
+        <p style="color: #656565; font-size: 14px;margin-top: 16px;margin-bottom: 0">نظر خود را ثبت کنید</p>
+        <button id="open">ثبت دیدگاه</button>
+    </div>
+    <div class="comments">
+        <div style="border-bottom: 1px solid #EDEDED">
+            <div style="display: flex;align-items: center">
+                <img src="{% static 'images/selected_product/like.svg' %}" style="margin-left: 5px">
+                <p style="color: #898989;font-size: 14px;margin: 0">۷۰% (۱۲۰ نفر) از خرید این محصول رضایت داشته اند</p>
+            </div>
+            <div class="satis-img">
+                <img src="{% static 'images/selected_product/dress1.png' %}" width="88" height="88">
+                <img src="{% static 'images/selected_product/dress2.png' %}" width="88" height="88">
+                <img src="{% static 'images/selected_product/dress3.png' %}" width="88" height="88">
+            </div>
+            <a href="#" class="more">مشاهده بیشتر</a>
+        </div>
+        <div class="comment">
+            <div class="row1">
+                <p style="margin-left: 32px">۱۶ آذر ۱۴۰۲</p>
+                <p>نگار زمانی</p>
+                <p style="color: #00966D; margin-right: 20px">خریدار</p>
+                <div class="Users-score">
+                    <img src="{% static 'images/selected_product/Component%204.svg' %}" width="16" height="16">
+                    <img src="{% static 'images/selected_product/Component%204.svg' %}" width="16" height="16">
+                    <img src="{% static 'images/selected_product/Component%204.svg' %}" width="16" height="16">
+                    <img src="{% static 'images/selected_product/Component%202.svg' %}" width="16" height="16">
+                    <img src="{% static 'images/selected_product/Component%202.svg' %}" width="16" height="16">
+                </div>
+            </div>
+            <div class="row2">
+                <p>بسیار عالی و باکیفیت</p>
+                <div class="feature">
+                    <div>
+                        <p style="margin-bottom: 5px"><span style="color: #00966D;">+</span> خنک</p>
+                        <p><span style="color: #00966D;">+</span> با کیفیت</p>
+                    </div>
+                    <p><span><img src="{% static 'images/selected_product/negative.png' %}" width="13" height="1.5" style="margin-bottom: 3px"></span> گران</p>
+                </div>
+            </div>
+            <div class="row3">
+                <p>آیا این دیدگاه مفید بود؟</p>
+                <button><img src="{% static 'images/selected_product/like.svg' %}"></button>
+                <button><img src="{% static 'images/selected_product/dislike.svg' %}"></button>
+            </div>
+        </div>
+        <div class="comment">
+            <div class="row1">
+                <p style="margin-left: 32px">۱۶ آذر ۱۴۰۲</p>
+                <p>نگار زمانی</p>
+                <p style="color: #00966D; margin-right: 20px">خریدار</p>
+                <div class="Users-score">
+                    <img src="{% static 'images/selected_product/Component%204.svg' %}" width="16" height="16">
+                    <img src="{% static 'images/selected_product/Component%204.svg' %}" width="16" height="16">
+                    <img src="{% static 'images/selected_product/Component%204.svg' %}" width="16" height="16">
+                    <img src="{% static 'images/selected_product/Component%202.svg' %}" width="16" height="16">
+                    <img src="{% static 'images/selected_product/Component%202.svg' %}" width="16" height="16">
+                </div>
+            </div>
+            <div class="row2">
+                <p>بسیار عالی و باکیفیت</p>
+                <div class="feature">
+                    <div>
+                        <p style="margin-bottom: 5px"><span style="color: #00966D;">+</span> خنک</p>
+                        <p><span style="color: #00966D;">+</span> با کیفیت</p>
+                    </div>
+                    <p><span><img src="{% static 'images/selected_product/negative.png' %}" width="13" height="1.5" style="margin-bottom: 3px"></span> گران</p>
+                </div>
+            </div>
+            <div class="row3">
+                <p>آیا این دیدگاه مفید بود؟</p>
+                <button><img src="{% static 'images/selected_product/like.svg' %}"></button>
+                <button><img src="{% static 'images/selected_product/dislike.svg' %}"></button>
+            </div>
+        </div>
+        <div class="comment">
+            <div class="row1">
+                <p style="margin-left: 32px">۱۶ آذر ۱۴۰۲</p>
+                <p>نگار زمانی</p>
+                <p style="color: #00966D; margin-right: 20px">خریدار</p>
+                <div class="Users-score">
+                    <img src="{% static 'images/selected_product/Component%204.svg' %}" width="16" height="16">
+                    <img src="{% static 'images/selected_product/Component%204.svg' %}" width="16" height="16">
+                    <img src="{% static 'images/selected_product/Component%204.svg' %}" width="16" height="16">
+                    <img src="{% static 'images/selected_product/Component%202.svg' %}" width="16" height="16">
+                    <img src="{% static 'images/selected_product/Component%202.svg' %}" width="16" height="16">
+                </div>
+            </div>
+            <div class="row2">
+                <p>بسیار عالی و باکیفیت</p>
+                <div class="feature">
+                    <div>
+                        <p style="margin-bottom: 5px"><span style="color: #00966D;">+</span> خنک</p>
+                        <p><span style="color: #00966D;">+</span> با کیفیت</p>
+                    </div>
+                    <p><span><img src="{% static 'images/selected_product/negative.png' %}" width="13" height="1.5" style="margin-bottom: 3px"></span> گران</p>
+                </div>
+            </div>
+            <div class="row3">
+                <p>آیا این دیدگاه مفید بود؟</p>
+                <button><img src="{% static 'images/selected_product/like.svg' %}"></button>
+                <button><img src="{% static 'images/selected_product/dislike.svg' %}"></button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!--footer-->
+<div class="footer1">
+    <div class="container-footer1">
+        <p>برای دریافت آخرین اخبار و تخفیف های جدید، ایمیل خود را وارد نمایید</p>
+        <form class="email-form">
+            <input type="email" class="email" placeholder="ایمیل شما">
+            <button type="submit" class="submit-btn-email">ثبت</button>
+        </form>
+    </div>
+    <div class="social">
+        <p>ما را در شبکه های اجتماعی دنبال کنید</p>
+        <div class="social-img">
+            <a href="#">
+                <img src="{% static 'images/YouTube%20svg.png' %}" style="margin: 20px">
+            </a>
+            <a href="#">
+                <img src="{% static 'images/Pinterest%20svg.png' %}" style="margin: 10px">
+            </a>
+            <a href="#">
+                <img src="{% static 'images/174-1744532_facebook-icon-link-facebook-white-icon-hd-png-fotor-bg-remover-2023041811029%201.png' %}" style="margin: 10px">
+            </a>
+            <a href="#">
+                <img src="{% static 'images/Instagram%20svg.png' %}" style="margin: 10px">
+            </a>
+        </div>
+    </div>
+</div>
+
+<div class="footer2">
+    <div class="links-buttom">
+        <div class="container-footer2">
+            <h3>همراه با کاستومی</h3>
+            <a href="#"> فروش محصولات</a>
+            <a href="#">فرصت همکاری </a>
+            <a href="#"> تماس با ما</a>
+            <a href="#">نقشه سایت </a>
+        </div>
+        <div class="container-footer2">
+            <h3>خدمات مشتریان</h3>
+            <a href="#">سوالات متداول</a>
+            <a href="#">حریم خصوصی</a>
+            <a href="#">ثبت شکایت</a>
+            <a href="#">ضمانت نامه محصولات</a>
+        </div>
+        <div class="container-footer2">
+            <h3>راهنمای خرید</h3>
+            <a href="#">راهنمای ثبت سفارش</a>
+            <a href="#">شیوه های پرداخت</a>
+            <a href="#">نحوه ارسال سفارش ها</a>
+            <a href="#">شرایط بازگرداندن محصول</a>
+        </div>
+    </div>
+
+    <div class="footer2-info">
+        <p style="font-size: 18px;font-weight: bold">فروشگاه اینترنتی کاستومی</p>
+        <div class="call">
+            <span>تماس با پشتیبانی:</span>
+            <span>۰۲۱-۳۴۵۶۰۰۰</span>
+            <span>پاسخگویی ۲۴ ساعته، ۷ روز هفته</span>
+        </div>
+        <div class="certificate">
+                <img src="{% static 'images/01.png' %}"  width="54" height="64">
+                <img src="{% static 'images/02.png' %}"  width="54" height="64">
+                <img src="{% static 'images/03%201.png' %}"  width="54" height="64">
+        </div>
+    </div>
+    <div class="last-text">
+        <p>تمامی حقوق این وبسایت متعلق به فروشگاه اینترنتی کاستومی می‌باشد.</p>
+    </div>
+</div>
+</body>
+<div class="blurring" id="overlay"></div>
+<div id="box" class="register-comment">
+    <div class="register-content">
+        <div class="header-comment">
+            <h5>نظر خود را با ما در میان بگذارید</h5>
+            <button id="close"><img src="{% static 'images/selected_product/close-circle.svg' %}"></button>
+        </div>
+        <p>در مورد تیشرت ساده سفید</p>
+        <div class="star-comment">
+            <p>امتیاز دهید</p>
+            <img src="{% static 'images/selected_product/Component%202.svg' %}" id="starImage1">
+            <img src="{% static 'images/selected_product/Component%202.svg' %}" id="starImage2">
+            <img src="{% static 'images/selected_product/Component%202.svg' %}" id="starImage3">
+            <img src="{% static 'images/selected_product/Component%202.svg' %}" id="starImage4">
+            <img src="{% static 'images/selected_product/Component%202.svg' %}" id="starImage5">
+        </div>
+        <div class="input-comment">
+            <p>عنوان نظر</p>
+            <input type="text" id="input1">
+        </div>
+        <div class="input-comment">
+            <p>نکات مثبت</p>
+            <input type="text" id="input2">
+            <button><img src="{% static 'images/selected_product/add-circle.svg' %}"></button>
+        </div>
+        <div class="input-comment">
+            <p>نکات منفی</p>
+            <input type="text" id="input3">
+            <button><img src="{% static 'images/selected_product/add-circle.svg' %}"></button>
+        </div>
+        <div class="input-comment">
+            <p>
+                متن نظر
+                <span class="required-star">*</span>
+            </p>
+            <textarea placeholder="متن خود را وارد کنید" id="input4"></textarea>
+        </div>
+        <div class="register-button">
+            <button type="submit" class="submit-comment" id="submitComment">ثبت دیدگاه</button>
+            <p>ثبت دیدگاه به معنی موافقت شما با قوانین انتشار کاستومی است.</p>
+        </div>
+    </div>
+</div>
+</html>

@@ -1,0 +1,237 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="fa">
+<head>
+    <meta charset="UTF-8">
+    <title>اطلاعات کاربر</title>
+    <link rel="stylesheet" href="{% static 'styles/user_signup.css' %}">
+</head>
+
+<body>
+
+<!--header-->
+<div class="header">
+    <div class="logo-container">
+        <img src="{% static 'images/sign_up/LOGO.png' %}" alt="logo" width="50px" height="50px">
+        <div class="logo-text">
+            <p style="margin: 0;line-height: 1;"><span style="color: #A72F3B">ک</span>استومی</p>
+            <div class="subtext">فروشگاه اینترنتی</div>
+        </div>
+    </div>
+    <div class="search-container">
+        <input type="text" placeholder="جستجو" class="search-box">
+        <button class="search-icon">
+            <img src="{% static 'images/sign_up/search-normal.svg' %}" width="24" height="24">
+        </button>
+    </div>
+    <div class="actions">
+        <a href="#" class="links-container">
+            <img src="{% static 'images/sign_up/Login.png' %}" alt="login">
+            <span>ورود | ثبت‌نام</span>
+        </a>
+        <a href="#" class="links-container">
+            <img src="{% static 'images/sign_up/shopping-cart.png' %}" alt="shopping">
+            <span>سبد خرید</span>
+            <span class="numbers">۰</span>
+        </a>
+    </div>
+</div>
+
+<div class="container">
+    <div class="center-container">
+        <img src="{% static 'images/sign_up/user.png' %}" alt="user">
+        <p>اطلاعات کاربر</p>
+    </div>
+    <div>
+        <img src="{% static 'images/sign_up/line.png' %}" alt="line">
+    </div>
+    <div class="center-container">
+        <img src="{% static 'images/sign_up/call.png' %}" alt="call">
+        <p style="color: #E5C1C4">اطلاعات تماس</p>
+    </div>
+</div>
+
+<div class="mobile_header">
+    <img src="{% static 'images/sign_up/arrow-right.svg' %}">
+    <p>فرم ثبت نام</p>
+</div>
+
+<!--form Desktop-->
+<div class="form-container">
+    <div class="form-content">
+        <h6 style="color: #B95962;font-size: 18px;margin: 0">فرم ثبت اطلاعات</h6>
+        <div class="form">
+            <form method="POST" id="signupForm">
+                {% csrf_token %}
+                <div class="input_group">
+                    <p class="input-paragraph">نام و نام خانوادگی</p>
+                    <p class="input-paragraph">کد ملی</p>
+                </div>
+                <div class="input_group">
+                    {{ form.full_name }}
+                    {{ form.national_code }}
+                </div>
+
+                <div class="input_group">
+                    <p class="input-paragraph">تحصیلات (اختیاری)</p>
+                    <p class="input-paragraph">شغل (اختیاری)</p>
+                </div>
+                <div class="input_group">
+                    {{ form.education }}
+                    {{ form.job }}
+                </div>
+                <div class="input_group">
+                    <p class="input-paragraph">آدرس ایمیل</p>
+                    <p class="input-paragraph">کلمه عبور</p>
+                </div>
+                <div class="input_group">
+                    {{ form.email }}
+                    {{ form.password }}
+                </div>
+
+                <div class="input_group">
+                    <p class="input-paragraph">تاریخ تولد</p>
+                </div>
+                <div class="input_group">
+                    <div class="input-container">
+                        {{ form.birth_date }}
+                        <button><img src="{% static 'images/sign_up/calendar.svg' %}" class="calendar-icon" alt="calendar"></button>
+                    </div>
+                </div>
+
+                <button type="submit" class="submit-btn">مرحله بعدی
+                    <img src="{% static 'images/sign_up/Vector.svg' %}">
+                </button>
+            </form>
+        </div>
+    </div>
+    <img src="{% static 'images/sign_up/Photo.jpg' %}" alt="Illustration" width="520" height="480">
+</div>
+
+<!--form_mobile-->
+<div class="form-container-mobile">
+    <div class="header-form">
+        <div class="header-form-top">
+            <div style="display: flex; flex-direction: column; gap: 4px">
+                <p style="color: #242424; font-size: 16px">اطلاعات کاربر</p>
+                <p style="color: #AFAFAF; font-size: 12px">مرحله بعد: اطلاعات تماس</p>
+            </div>
+            <img src="{% static 'images/sign_up/Stepper mobile.svg' %}" width="68px" height="68px">
+        </div>
+        <img src="{% static 'images/sign_up/Photo.jpg' %}" alt="Illustration" class="img-mobile">
+    </div>
+    <div class="form">
+        <form method="POST" class="form-option">
+            {% csrf_token %}
+            <div class="input_group">
+                <p class="input-paragraph">نام و نام خانوادگی</p>
+                {{ form.full_name }}
+            </div>
+            <div class="input_group">
+                <p class="input-paragraph">کد ملی</p>
+                {{ form.national_code }}
+            </div>
+            <div class="input_group">
+                <p class="input-paragraph">تحصیلات (اختیاری)</p>
+                {{ form.education }}
+            </div>
+            <div class="input_group">
+                <p class="input-paragraph">شغل (اختیاری)</p>
+                {{ form.job }}
+            </div>
+            <div class="input_group">
+                <p class="input-paragraph">کلمه عبور</p>
+                {{ form.password }}
+            </div>
+            <div class="input_group">
+                <p class="input-paragraph">آدرس ایمیل</p>
+                {{ form.email }}
+            </div>
+            <div class="input_group">
+                <p class="input-paragraph">تاریخ تولد</p>
+                {{ form.birth_date }}
+            </div>
+            <div class="submit-btn-mobile">
+                <button type="submit" class="submit-btn">مرحله بعد
+                    <img src="{% static 'images/sign_up/Vector.svg' %}">
+                </button>
+            </div>
+        </form>
+    </div>
+</div>
+
+<!--footer-->
+<div class="footer1">
+    <div class="container-footer1">
+        <p>برای دریافت آخرین اخبار و تخفیف های جدید، ایمیل خود را وارد نمایید</p>
+        <form class="email-form">
+            <input type="email" class="email" placeholder="ایمیل شما">
+            <button type="submit" class="submit-btn-email">ثبت</button>
+        </form>
+    </div>
+    <div class="social">
+        <p>ما را در شبکه های اجتماعی دنبال کنید</p>
+        <div class="social-img">
+            <a href="#">
+                <img src="{% static 'images/YouTube%20svg.png' %}" style="margin: 20px">
+            </a>
+            <a href="#">
+                <img src="{% static 'images/Pinterest%20svg.png' %}" style="margin: 10px">
+            </a>
+            <a href="#">
+                <img src="{% static 'images/174-1744532_facebook-icon-link-facebook-white-icon-hd-png-fotor-bg-remover-2023041811029%201.png' %}" style="margin: 10px">
+            </a>
+            <a href="#">
+                <img src="{% static 'images/Instagram%20svg.png' %}" style="margin: 10px">
+            </a>
+        </div>
+    </div>
+</div>
+
+<div class="footer2">
+    <div class="links-buttom">
+        <div class="container-footer2">
+            <h3>همراه با کاستومی</h3>
+            <a href="#"> فروش محصولات</a>
+            <a href="#">فرصت همکاری </a>
+            <a href="#"> تماس با ما</a>
+            <a href="#">نقشه سایت </a>
+        </div>
+        <div class="container-footer2">
+            <h3>خدمات مشتریان</h3>
+            <a href="#">سوالات متداول</a>
+            <a href="#">حریم خصوصی</a>
+            <a href="#">ثبت شکایت</a>
+            <a href="#">ضمانت نامه محصولات</a>
+        </div>
+        <div class="container-footer2">
+            <h3>راهنمای خرید</h3>
+            <a href="#">راهنمای ثبت سفارش</a>
+            <a href="#">شیوه های پرداخت</a>
+            <a href="#">نحوه ارسال سفارش ها</a>
+            <a href="#">شرایط بازگرداندن محصول</a>
+        </div>
+    </div>
+
+    <div class="footer2-info">
+        <p style="font-size: 18px;font-weight: bold">فروشگاه اینترنتی کاستومی</p>
+        <div class="call">
+            <span>تماس با پشتیبانی:</span>
+            <span>۰۲۱-۳۴۵۶۰۰۰</span>
+            <span>پاسخگویی ۲۴ ساعته، ۷ روز هفته</span>
+        </div>
+        <div class="certificate">
+                <img src="{% static 'images/01.png' %}"  width="54" height="64">
+                <img src="{% static 'images/02.png' %}"  width="54" height="64">
+                <img src="{% static 'images/03%201.png' %}"  width="54" height="64">
+        </div>
+    </div>
+    <div class="last-text">
+        <p>تمامی حقوق این وبسایت متعلق به فروشگاه اینترنتی کاستومی می‌باشد.</p>
+    </div>
+</div>
+</body>
+</html>
+
+
+
